@@ -1,0 +1,19 @@
+pkgdir=[libstdcpp-14.3.0]
+pkgname=[libstdcpp]
+pkgver=[14.3.0]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz]
+md5sum=[2e2f25966bbb5321bf6a3beafcd241b5]
+
+prepare=[mkdir -v build && cd build && ../libstdc++-v3/configure --host=$LFS_TGT \
+ --build=$(../config.guess) --prefix=/usr --disable-multilib --disable-nls \
+ --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.3.0
+]
+
+build=[cd build && make]
+
+install=[cd build && make DESTDIR=$LFS install]
+
+post=[rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la]

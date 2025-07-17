@@ -1,0 +1,16 @@
+pkgdir=[bash-5.2.37]
+pkgname=[bash]
+pkgver=[5.2.37]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/bash/bash-5.2.37.tar.gz]
+md5sum=[9c28f21ff65de72ca329c1779684a972]
+
+prepare=[./configure --prefix=/usr --build=$(sh support/config.guess) --host=$LFS_TGT --without-bash-malloc]
+
+build=[make]
+
+install=[make DESTDIR=$LFS install]
+
+post=[ln -sv bash $LFS/bin/sh]
