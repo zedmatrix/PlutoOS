@@ -1,0 +1,12 @@
+pkgdir=[lfs-bootscripts-20240825]
+pkgname=[lfs-bootscripts]
+pkgver=[20240825]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20240825.tar.xz]
+md5sum=[370d6d94de2e3e8fe5454de4abaddcd1]
+
+build=[echo "Installing System-V Bootscripts"]
+
+install=[make install]

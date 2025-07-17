@@ -1,0 +1,12 @@
+pkgdir=[blfs-bootscripts-20250225]
+pkgname=[blfs-bootscripts]
+pkgver=[20250225]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20250225.tar.xz]
+md5sum=[ec1bae931da7e994d2fbb752913215a0]
+
+build=[echo "Installing sshd and gpm bootscript"]
+
+install=[make install-sshd && make install-gpm]
