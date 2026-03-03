@@ -1,0 +1,40 @@
+pkgdir=[musl-1.2.5-temp]
+pkgname=[musl]
+pkgver=[1.2.5]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://musl.libc.org/releases/musl-1.2.5.tar.gz]
+md5sum=[ac5cfde7718d0547e224247ccfe59f18]
+
+extract=[ xtar $LFS/sources/musl-1.2.5.tar.gz ]
+
+preconfig=[ patch -Np1 -i $LFS/sources/musl-1.2.5-rpmalloc.patch
+    patch -Np1 -i $LFS/sources/musl-1.2.5-iconv-fix.patch
+]
+
+prepare=[ ./configure --prefix=/usr --host=$LFS_TGT \
+    --build=$LFS_HOST --with-malloc=rpmalloc
+]
+# real    0m1.054s
+# user    0m0.623s
+# sys     0m0.424s
+
+build=[ make ]
+# real    0m12.715s
+# user    0m38.119s
+# sys     0m9.685s
+
+install=[ make DESTDIR=$LFS install]
+# real    0m0.545s
+# user    0m0.779s
+# sys     0m0.699s
+
+post=[
+    echo 'int main(){}' | $LFS_TGT-gcc -xc -
+    readelf -l a.out | grep ld-musl
+]
+
+##  [Requesting program interpreter: /lib/ld-musl-aarch64.so.1]
+
+clean=[ cd ../ && rm -rf musl-1.2.5 ]

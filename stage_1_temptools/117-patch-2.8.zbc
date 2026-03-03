@@ -7,8 +7,12 @@ zarchive=[false]
 pkgurl=[https://ftp.gnu.org/gnu/patch/patch-2.8.tar.xz]
 md5sum=[149327a021d41c8f88d034eab41c039f]
 
-prepare=[./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess)]
+extract=[ xtar $LFS/sources/patch-2.8.tar.xz ]
 
-build=[make]
+prepare=[ ./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess) ]
 
-install=[make DESTDIR=$LFS install]
+build=[ make ]
+
+install=[ make DESTDIR=$LFS install ]
+
+clean=[ cd ../ && rm -rf patch-2.8 ]

@@ -7,10 +7,14 @@ zarchive=[false]
 pkgurl=[https://ftp.gnu.org/gnu/gawk/gawk-5.3.2.tar.xz]
 md5sum=[b7014650c5f45e5d4837c31209dc0037]
 
-preconfig=[sed -i 's/extras//' Makefile.in]
+extract=[ xtar $LFS/sources/gawk-5.3.2.tar.xz ]
 
-prepare=[./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess)]
+preconfig=[ sed -i 's/extras//' Makefile.in ]
 
-build=[make]
+prepare=[ ./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess) ]
 
-install=[make DESTDIR=$LFS install]
+build=[ make ]
+
+install=[ make DESTDIR=$LFS install ]
+
+clean=[ cd ../ && rm -rf gawk-5.3.2 ]

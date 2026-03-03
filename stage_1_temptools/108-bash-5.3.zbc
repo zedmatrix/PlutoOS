@@ -1,0 +1,30 @@
+pkgdir=[bash-5.3]
+pkgname=[bash]
+pkgver=[5.3]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/bash/bash-5.3.tar.gz]
+md5sum=[977c8c0c5ae6309191e7768e28ebc951]
+
+extract=[ xtar $LFS/sources/bash-5.3.tar.gz ]
+
+prepare=[ patch -Np1 -i $LFS/sources/bash-5.3-cross_compile.patch
+	./configure --prefix=/usr --build=$(sh support/config.guess) --host=$LFS_TGT --without-bash-malloc ]
+# real    0m15.489s
+# user    0m9.878s
+# sys     0m5.934s
+
+build=[ make ]
+# real    0m13.086s
+# user    0m44.979s
+# sys     0m3.199s
+
+install=[ make DESTDIR=$LFS install ]
+# real    0m1.818s
+# user    0m3.623s
+# sys     0m1.016s
+
+post=[ ln -sv bash $LFS/bin/sh ]
+
+clean=[ cd ../ && rm -rf bash-5.3 ]

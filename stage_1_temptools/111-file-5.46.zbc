@@ -7,16 +7,32 @@ zarchive=[false]
 pkgurl=[https://astron.com/pub/file/file-5.46.tar.gz]
 md5sum=[459da2d4b534801e2e2861611d823864]
 
-preconfig=[mkdir -v build && pushd build &&
-  ../configure --disable-bzlib --disable-libseccomp --disable-xzlib --disable-zlib &&
-  make &&
-  popd
+extract=[ xtar $LFS/sources/file-5.46.tar.gz ]
+
+preconfig=[ mcd build
+  ../configure --disable-bzlib --disable-libseccomp --disable-xzlib --disable-zlib
+  make
+  cd ../
 ]
+# real    0m2.544s
+# user    0m6.945s
+# sys     0m0.954s
 
-prepare=[./configure --prefix=/usr --host=$LFS_TGT --build=$(./config.guess)]
+prepare=[ ./configure --prefix=/usr --host=$LFS_TGT --build=$(./config.guess) ]
+# real    0m5.329s
+# user    0m3.341s
+# sys     0m2.233s
 
-build=[make FILE_COMPILE=$(pwd)/build/src/file]
+build=[ make FILE_COMPILE=$(pwd)/build/src/file ]
+# real    0m2.294s
+# user    0m6.715s
+# sys     0m0.812s
 
-install=[make DESTDIR=$LFS install]
+install=[ make DESTDIR=$LFS install ]
+# real    0m0.327s
+# user    0m0.177s
+# sys     0m0.258s
 
-post=[rm -v $LFS/usr/lib/libmagic.la]
+post=[ rm -v $LFS/usr/lib/libmagic.la ]
+
+clean=[ cd ../ && rm -rf file-5.46 ]

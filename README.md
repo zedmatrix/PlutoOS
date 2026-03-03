@@ -1,5 +1,5 @@
 # Pluto OS
-Pluto OS - Linux From Scratch - sysv - zbuild
+Pluto - Arm64 Musl From Scratch - sysv - zbuild
 
 # Create Partition
 `fdisk /dev/sdX`

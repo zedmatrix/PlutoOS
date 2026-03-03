@@ -7,13 +7,26 @@ zarchive=[false]
 pkgurl=[https://ftp.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz]
 md5sum=[2e2f25966bbb5321bf6a3beafcd241b5]
 
-prepare=[mkdir -v build && cd build && ../libstdc++-v3/configure --host=$LFS_TGT \
+extract=[ xtar $LFS/sources/gcc-14.3.0.tar.xz ]
+
+prepare=[ mcd build && ../libstdc++-v3/configure --host=$LFS_TGT \
  --build=$(../config.guess) --prefix=/usr --disable-multilib --disable-nls \
  --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.3.0
 ]
+# real    0m17.301s
+# user    0m9.478s
+# sys     0m7.295s
 
-build=[cd build && make]
+build=[ cd build && make ]
+# real    0m28.340s
+# user    1m7.102s
+# sys     0m8.340s
 
-install=[cd build && make DESTDIR=$LFS install]
+install=[ cd build && make DESTDIR=$LFS install ]
+# real    0m2.772s
+# user    0m1.113s
+# sys     0m1.988s
 
-post=[rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la]
+post=[ rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la ]
+
+clean=[ cd ../.. && rm -rf gcc-14.3.0 ]

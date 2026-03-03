@@ -1,0 +1,30 @@
+pkgdir=[binutils-2.45-pass1]
+pkgname=[binutils]
+pkgver=[2.45]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://sourceware.org/pub/binutils/releases/binutils-2.45.tar.xz]
+md5sum=[dee5b4267e0305a99a3c9d6131f45759]
+
+extract=[ xtar $LFS/sources/binutils-2.45.tar.xz ]
+
+prepare=[mcd build && ../configure --prefix=$LFS/tools \
+ --with-sysroot=$LFS --target=$LFS_TGT --disable-nls --disable-werror \
+ --enable-gprofng=no --enable-new-dtags --enable-default-hash-style=gnu
+]
+# real    0m3.406s
+# user    0m1.383s
+# sys     0m2.140s
+
+build=[cd build && make]
+# real    1m5.283s
+# user    2m51.869s
+# sys     0m40.390s
+
+install=[cd build && make install]
+# real    0m1.051s
+# user    0m1.291s
+# sys     0m0.758s
+
+clean=[cd ../.. && rm -rf binutils-2.45]

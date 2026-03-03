@@ -1,0 +1,27 @@
+pkgdir=[m4-1.4.21-temp]
+pkgname=[m4]
+pkgver=[1.4.21]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/m4/m4-1.4.21.tar.xz]
+md5sum=[8051eef7239b2f187791f2ab0034d6b7]
+
+extract=[ xtar $LFS/sources/m4-1.4.21.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess) ]
+# real    0m19.139s
+# user    0m11.779s
+# sys     0m7.821s
+
+build=[ make ]
+# real    0m7.423s
+# user    0m20.667s
+# sys     0m3.013s
+
+install=[ make DESTDIR=$LFS install ]
+# real    0m0.356s
+# user    0m0.252s
+# sys     0m0.130s
+
+clean=[ cd ../ && rm -rf m4-1.4.21 ]

@@ -7,8 +7,16 @@ zarchive=[false]
 pkgurl=[https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz]
 md5sum=[c8469a3713cbbe04d955d4ae4be23eeb]
 
-prepare=[./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess)]
+extract=[ xtar $LFS/sources/make-4.4.1.tar.gz ]
 
-build=[make]
+prepare=[ patch -Np1 -i $LFS/sources/make-4.4.1-gcc15.patch
+	./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess) ]
 
-install=[make DESTDIR=$LFS install]
+build=[ make ]
+# real    0m2.592s
+# user    0m8.228s
+# sys     0m0.617s
+
+install=[ make DESTDIR=$LFS install ]
+
+clean=[ cd ../ && rm -rf make-4.4.1 ]
