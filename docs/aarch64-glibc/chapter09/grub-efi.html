@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <title>
+      9.34.&nbsp;GRUB-2.12 for EFI
+    </title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/lfs.css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="lfs" id="lfs-Version r1.0-wip-systemd">
+    <div class="navheader">
+      <h4>
+        Zirconium Cross Linux From Scratch - AArch64 Version r1.0-wip-systemd
+      </h4>
+      <h3>
+        Chapter&nbsp;9.&nbsp;System Configuration
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="efibootmgr.html" title=
+          "efibootmgr-18">Prev</a>
+          <p>
+            efibootmgr-18
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="../chapter10/chapter10.html" title=
+          "Making the LFS System Bootable">Next</a>
+          <p>
+            Making the LFS System Bootable
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter09.html" title=
+          "Chapter&nbsp;9.&nbsp;System Configuration">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Zirconium Cross Linux From Scratch - AArch64 Version r1.0-wip-systemd">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <h1 class="sect1">
+      <a id="ch-bootable-grub-efi" name="ch-bootable-grub-efi"></a>9.34.
+      GRUB-2.12 for EFI
+    </h1>
+    <div class="sect1" lang="en" xml:lang="en">
+      <div class="package" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          9.34.1. Introduction to GRUB
+        </h2>
+        <p>
+          The <span class="application">GRUB</span> package provides GRand
+          Unified Bootloader. In this page it will be built with UEFI
+          support, which is not enabled for GRUB built in LFS.
+        </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Approximate build time:</strong>
+              <span class="segbody">1.0 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">Required disk space:</strong>
+              <span class="segbody">176 MB (with optional dependencies and
+              download)</span>
+            </div>
+          </div>
+        </div>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Additional Download:</strong>
+              <span class="segbody"><a class="ulink" href=
+              "https://unifoundry.com/pub/unifont/unifont-17.0.01/font-builds/unifont-17.0.01.pcf.gz">
+              https://unifoundry.com/pub/unifont/unifont-17.0.01/font-builds/unifont-17.0.01.pcf.gz</a></span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">SHA256 Sum:</strong> <span class=
+              "segbody">8240c381398a21f4eef993d16f0976d6a627e61054f0add275d195408f24efa9</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">Download Size:</strong> <span class=
+              "segbody">1328 KB</span>
+            </div>
+          </div>
+        </div>
+        <h3>
+          GRUB Dependencies
+        </h3>
+        <h4>
+          Recommended
+        </h4>
+        <p class="recommended">
+          <a class="xref" href="efibootmgr.html" title=
+          "9.33.&nbsp;efibootmgr-18">Section&nbsp;9.33, “efibootmgr-18”</a>
+          (runtime)
+        </p>
+        <h4>
+          Optional
+        </h4>
+        <p class="optional">
+          <a class="xref" href="freetype2.html" title=
+          "9.31.&nbsp;FreeType-2.14.2">Section&nbsp;9.31,
+          “FreeType-2.14.2”</a>, <a class="xref" href="fuse.html" title=
+          "9.30.&nbsp;Fuse-3.18.1">Section&nbsp;9.30, “Fuse-3.18.1”</a>, and
+          <a class="xref" href="lvm2.html" title=
+          "9.29.&nbsp;LVM2-2.03.38">Section&nbsp;9.29, “LVM2-2.03.38”</a>
+        </p>
+        <p class="nodep">
+          If you are building GRUB for a 32-bit LFS system to boot it on a
+          64-bit UEFI firmware, rebuild "gcc" with the <em class=
+          "parameter"><code>--enable-targets=all</code></em> switch appended
+          to the <span class="command"><strong>../configure</strong></span>
+          command.
+        </p>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          9.34.2. Installation of GRUB
+        </h2>
+        <p>
+          First, install font data if you've downloaded it and you've
+          installed the optional dependency "freetype2":
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir -pv /usr/share/fonts/unifont &amp;&amp;
+zcat ../unifont-17.0.01.pcf.gz &gt; /usr/share/fonts/unifont/unifont.pcf</kbd></pre>
+        <div class="admon warning">
+          <img alt="[Warning]" src="../images/warning.png" />
+          <h3>
+            Warning
+          </h3>
+          <p>
+            Unset any environment variables which may affect the build:
+          </p>
+          <pre class="userinput"><kbd class=
+          "command">unset {C,CPP,CXX,LD}FLAGS</kbd></pre>
+          <p>
+            Don't try <span class="quote">“<span class=
+            "quote">tuning</span>”</span> this package with custom
+            compilation flags: this package is a bootloader, with low-level
+            operations in the source code which is likely to be broken by
+            some aggressive optimizations.
+          </p>
+        </div>
+        <p>
+          Build <span class="application">GRUB</span> with the following
+          commands:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr        \
+            --sysconfdir=/etc    \
+            --disable-efiemu     \
+            --with-platform=efi  \
+            --target=aarch64     \
+            --disable-werror</kbd></pre>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          This package does not have a test suite providing meaningful
+          results.
+        </p>
+        <p>
+          Now, if you've skipped the Chaper 8 GRUB package, install GRUB and
+          skip the remaining instructions in this section:
+        </p>
+        <pre class="userinput"><kbd class="command">make install
+mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</kbd></pre>
+        <p>
+          If you did NOT skip <a class="xref" href="../chapter10/grub.html"
+          title=
+          "10.4.&nbsp;Using GRUB to Set Up the Boot Process">Section&nbsp;10.4,
+          “Using GRUB to Set Up the Boot Process”</a> GRUB package, only
+          install the components not installed from the Chapter 8 GRUB
+          package instead:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">make -C grub-core install</kbd></pre>
+        <p>
+          If you've installed the optional font data and <a class="xref"
+          href="freetype2.html" title=
+          "9.31.&nbsp;FreeType-2.14.2">Section&nbsp;9.31,
+          “FreeType-2.14.2”</a>, install the <span class=
+          "command"><strong>grub-mkfont</strong></span> program and the font
+          data files (without the font data files GRUB can still function
+          normally, but the boot menu will be displayed using a coarse font
+          or in a smaller region on the screen).
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">install -vm755 grub-mkfont /usr/bin/
+install -vm644 ascii.h widthspec.h *.pf2 /usr/share/grub/</kbd></pre>
+        <p>
+          If both <a class="xref" href="fuse.html" title=
+          "9.30.&nbsp;Fuse-3.18.1">Section&nbsp;9.30, “Fuse-3.18.1”</a> and
+          <a class="xref" href="lvm2.html" title=
+          "9.29.&nbsp;LVM2-2.03.38">Section&nbsp;9.29, “LVM2-2.03.38”</a> are
+          installed, also install the <span class=
+          "command"><strong>grub-mount</strong></span> program:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">install -vm755 grub-mount /usr/bin/</kbd></pre>
+      </div>
+      <div class="commands" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          9.34.3. Command Explanations
+        </h2>
+        <p>
+          <em class="parameter"><code>--with-platform=efi</code></em>:
+          Ensures building GRUB with EFI enabled.
+        </p>
+        <p>
+          <em class="parameter"><code>--target=aarch64</code></em>: Ensures
+          building GRUB for arm64 even if building on a 32-bit LFS system.
+          Most EFI firmware on arm64 does not support 32-bit bootloaders.
+        </p>
+      </div>
+      <div class="sect2" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          9.34.4. Configuring GRUB
+        </h2>
+        <p>
+          Using GRUB to make the LFS system bootable on UEFI platform will be
+          discussed in <a class="xref" href="../chapter10/grub-setup.html"
+          title=
+          "10.5.&nbsp;Using GRUB to Set Up the Boot Process with UEFI">Using
+          GRUB to Set Up the Boot Process with UEFI</a>.
+        </p>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          9.34.5. Contents
+        </h2>
+        <p>
+          A list of the installed files, along with their short descriptions
+          can be found at <a class="xref" href="../chapter10/grub.html"
+          title="10.4.&nbsp;Using GRUB to Set Up the Boot Process">Section&nbsp;10.4,
+          “Using GRUB to Set Up the Boot Process”</a>.
+        </p>
+        <p>
+          Listed below are the newly installed programs along with short
+          descriptions.
+        </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Installed Programs:</strong>
+              <span class="segbody">grub-mkfont and grub-mount
+              (optional)</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">Installed Directories:</strong>
+              <span class="segbody">/usr/lib/grub/arm64-efi</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            Short Descriptions
+          </h3>
+          <table border="0" class="variablelist">
+            <colgroup>
+              <col align="left" valign="top" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mkfont" name="grub-mkfont"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-mkfont</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    converts common font file formats into PF2
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mount" name="grub-mount"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-mount</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    is a debug tool for filesystem driver
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="efibootmgr.html" title=
+          "efibootmgr-18">Prev</a>
+          <p>
+            efibootmgr-18
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="../chapter10/chapter10.html" title=
+          "Making the LFS System Bootable">Next</a>
+          <p>
+            Making the LFS System Bootable
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter09.html" title=
+          "Chapter&nbsp;9.&nbsp;System Configuration">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Zirconium Cross Linux From Scratch - AArch64 Version r1.0-wip-systemd">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

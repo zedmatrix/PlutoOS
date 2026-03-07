@@ -1,0 +1,2764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <title>
+      3.2.&nbsp;All Packages
+    </title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/lfs.css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="lfs" id="lfs-Version r1.0-wip-systemd">
+    <div class="navheader">
+      <h4>
+        Zirconium Cross Linux From Scratch - AArch64 Version r1.0-wip-systemd
+      </h4>
+      <h3>
+        Chapter&nbsp;3.&nbsp;Packages and Patches
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">Prev</a>
+          <p>
+            Introduction
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="patches.html" title=
+          "Needed Patches">Next</a>
+          <p>
+            Needed Patches
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter03.html" title=
+          "Chapter&nbsp;3.&nbsp;Packages and Patches">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Zirconium Cross Linux From Scratch - AArch64 Version r1.0-wip-systemd">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <h1 class="sect1">
+      <a id="ch-materials-packages" name="ch-materials-packages"></a>3.2. All
+      Packages
+    </h1>
+    <div class="sect1" lang="en" xml:lang="en">
+      <div class="admon note">
+        <img alt="[Note]" src="../images/note.png" />
+        <h3>
+          Note
+        </h3>
+        <p>
+          Read the <a class="ulink" href=
+          "https://www.linuxfromscratch.org/lfs/advisories/">security
+          advisories</a> before downloading packages to figure out if a newer
+          version of any package should be used to avoid security
+          vulnerabilities.
+        </p>
+        <p>
+          The upstream sources may remove old releases, especially when those
+          releases contain a security vulnerability. If one URL below is not
+          reachable, you should read the security advisories first to figure
+          out if a newer version (with the vulnerability fixed) should be
+          used. If not, try to download the removed package from a mirror.
+          Although it's possible to download an old release from a mirror
+          even if this release has been removed because of a vulnerability,
+          it's not a good idea to use a release known to be vulnerable when
+          building your system.
+        </p>
+      </div>
+      <p>
+        Download or otherwise obtain the following packages:
+      </p>
+      <div class="materials">
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Acl (2.3.2) - <span class="token">363
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://savannah.nongnu.org/projects/acl">https://savannah.nongnu.org/projects/acl</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://download.savannah.gnu.org/releases/acl/acl-2.3.2.tar.xz">
+                https://download.savannah.gnu.org/releases/acl/acl-2.3.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">97203a72cae99ab89a067fe2210c1cbf052bc492b479eca7d226d9830883b0bd</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">590765dee95907dbc3c856f7255bd669</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Attr (2.5.2) - <span class="token">484
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://savannah.nongnu.org/projects/attr">https://savannah.nongnu.org/projects/attr</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://download.savannah.gnu.org/releases/attr/attr-2.5.2.tar.gz">
+                https://download.savannah.gnu.org/releases/attr/attr-2.5.2.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">39bf67452fa41d0948c2197601053f48b3d78a029389734332a6309a680c6c87</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">227043ec2f6ca03c0948df5517f9c927</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Autoconf (2.72) - <span class="token">1,360
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/autoconf/">https://www.gnu.org/software/autoconf/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/autoconf/autoconf-2.72.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/autoconf/autoconf-2.72.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">ba885c1319578d6c94d46e9b0dceb4014caafe2490e437a0dbca3f270a223f5a</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">1be79f7106ab6767f18391c5e22be701</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Automake (1.18.1) - <span class=
+              "token">1,614 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/automake/">https://www.gnu.org/software/automake/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/automake/automake-1.18.1.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/automake/automake-1.18.1.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">cea31dbf1120f890cbf2a3032cfb9a68</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Bash (5.3) - <span class="token">11,089
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/bash/">https://www.gnu.org/software/bash/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/bash/bash-5.3.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/bash/bash-5.3.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">977c8c0c5ae6309191e7768e28ebc951</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Bc (7.0.3) - <span class="token">464
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/gavinhoward">https://github.com/gavinhoward</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-7.0.3.tar.xz">
+                https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-7.0.3.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">91eb74caed0ee6655b669711a4f350c25579778694df248e28363318e03c7fc4</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">ad4db5a0eb4fdbb3f6813be4b6b3da74</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Binutils (2.45.1) - <span class=
+              "token">27,307 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/binutils/">https://www.gnu.org/software/binutils/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://sourceware.org/pub/binutils/releases/binutils-2.45.1.tar.xz">
+                https://sourceware.org/pub/binutils/releases/binutils-2.45.1.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">5fe101e6fe9d18fdec95962d81ed670fdee5f37e3f48f0bef87bddf862513aa5</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">ff59f8dc1431edfa54a257851bea74e7</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Bison (3.8.2) - <span class="token">2,752
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/bison/">https://www.gnu.org/software/bison/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/bison/bison-3.8.2.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/bison/bison-3.8.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">c28f119f405a2304ff0a7ccdcc629713</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">BLFS-Bootscripts (20251220) - <span class=
+              "token">25 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20251220.tar.xz">
+                https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20251220.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">fcbeb5008483c2b440da0c6aca153b90a58afafebc178b496a4c49bb6d2e1e1b</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">b957840139ad618bee0efbbc529fc7a0</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Bzip2 (1.0.8) - <span class="token">792
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz">https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">67e051268d0c475ea773822f7500d0e5</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Coreutils (9.9) - <span class="token">6,148
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/coreutils/">https://www.gnu.org/software/coreutils/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/coreutils/coreutils-9.9.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/coreutils/coreutils-9.9.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">ce613d0dae179f4171966ecd0a898ec4</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Curl (8.18.0) - <span class="token">2,736
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://curl.se/">https://curl.se/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://curl.se/download/curl-8.18.0.tar.xz">https://curl.se/download/curl-8.18.0.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">40df79166e74aa20149365e11ee4c798a46ad57c34e4f68fd13100e2c9a91946</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">dae6088bf7af69d3b0a87c762de92248</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">D-Bus (1.16.2) - <span class="token">1,090
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.freedesktop.org/wiki/Software/dbus">https://www.freedesktop.org/wiki/Software/dbus</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://dbus.freedesktop.org/releases/dbus/dbus-1.16.2.tar.xz">
+                https://dbus.freedesktop.org/releases/dbus/dbus-1.16.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">97832e6f0a260936d28536e5349c22e5</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">DejaGNU (1.6.3) - <span class="token">608
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/dejagnu/">https://www.gnu.org/software/dejagnu/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/dejagnu/dejagnu-1.6.3.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/dejagnu/dejagnu-1.6.3.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">87daefacd7958b4a69f88c6856dbd1634261963c414079d0c371f589cd66a2e3</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">68c5208c58236eba447d7d6d1326b821</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Diffutils (3.12) - <span class="token">1,894
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/diffutils/">https://www.gnu.org/software/diffutils/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/diffutils/diffutils-3.12.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/diffutils/diffutils-3.12.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">d1b18b20868fb561f77861cd90b05de4</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">dosfstools (4.2) - <span class="token">314
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/dosfstools/dosfstools/releases/download/v4.2/dosfstools-4.2.tar.gz">
+                https://github.com/dosfstools/dosfstools/releases/download/v4.2/dosfstools-4.2.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">64926eebf90092dca21b14259a5301b7b98e7b1943e8a201c7d726084809b527</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">49c8e457327dc61efab5b115a27b087a</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">E2fsprogs (1.47.3) - <span class=
+              "token">9,851 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://e2fsprogs.sourceforge.net/">https://e2fsprogs.sourceforge.net/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.gz">
+                https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">2f5164e64dd7d91eadd1e0e8a77d92c06dd7837bb19f1d9189ce1939b363d2b4</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">113d7a7ee0710d2a670a44692a35fd2e</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">efibootmgr (18) - <span class="token">48
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/rhboot/efibootmgr/archive/18/efibootmgr-18.tar.gz">
+                https://github.com/rhboot/efibootmgr/archive/18/efibootmgr-18.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">442867d12f8525034a404fc8af3036dba8e1fc970998af2486c3b940dfad0874</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">e170147da25e1d5f72721ffc46fe4e06</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">efivar (39) - <span class="token">456
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/rhboot/efivar/archive/39/efivar-39.tar.gz">
+                https://github.com/rhboot/efivar/archive/39/efivar-39.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">c9edd15f2eeeea63232f3e669a48e992c7be9aff57ee22672ac31f5eca1609a6</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">a8fc3e79336cd6e738ab44f9bc96a5aa</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Elfutils (0.194) - <span class=
+              "token">11,722 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://sourceware.org/elfutils/">https://sourceware.org/elfutils/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://sourceware.org/ftp/elfutils/0.194/elfutils-0.194.tar.bz2">
+                https://sourceware.org/ftp/elfutils/0.194/elfutils-0.194.tar.bz2</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">1137792ea10e9194637d7344439a5955</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Expat (2.7.3) - <span class="token">493
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://libexpat.github.io/">https://libexpat.github.io/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.xz">
+                https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">71df8f40706a7bb0a80a5367079ea75d91da4f8c65c58ec59bcdfbf7decdab9f</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">423975a2a775ff32f12c53635b463a91</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Expect (5.45.4) - <span class="token">618
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://core.tcl.tk/expect/">https://core.tcl.tk/expect/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz">
+                https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">00fce8de158422f5ccd2666512329bd2</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">File (5.46) - <span class="token">1,283
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.darwinsys.com/file/">https://www.darwinsys.com/file/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://astron.com/pub/file/file-5.46.tar.gz">https://astron.com/pub/file/file-5.46.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">c9cc77c7c560c543135edc555af609d5619dbef011997e988ce40a3d75d86088</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">459da2d4b534801e2e2861611d823864</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Findutils (4.10.0) - <span class=
+              "token">2,189 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/findutils/">https://www.gnu.org/software/findutils/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/findutils/findutils-4.10.0.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/findutils/findutils-4.10.0.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">1387e0b67ff247d2abde998f90dfbf70c1491391a59ddfecb8ae698789f0a4f5</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">870cfd71c07d37ebe56f9f4aaf4ad872</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Flex (2.6.4) - <span class="token">1,386
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/westes/flex">https://github.com/westes/flex</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz">
+                https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">2882e3179748cc9f9c23ec593d6adc8d</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Flit-core (3.12.0) - <span class="token">53
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://pypi.org/project/flit-core/">https://pypi.org/project/flit-core/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://pypi.org/packages/source/f/flit-core/flit_core-3.12.0.tar.gz">
+                https://pypi.org/packages/source/f/flit-core/flit_core-3.12.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">c538415c1f27bd69cbbbf3cdd5135d39</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Freetype2 (2.14.2) - <span class=
+              "token">2,608 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://downloads.sourceforge.net/freetype/freetype-2.14.2.tar.xz">
+                https://downloads.sourceforge.net/freetype/freetype-2.14.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">4b62dcab4c920a1a860369933221814362e699e26f55792516d671e6ff55b5e1</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">b019e5b389e0ec08ebdfb4a50666cc5e</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Freetype2 Documentation (2.14.2) -
+              <span class="token">2,128 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://downloads.sourceforge.net/freetype/freetype-doc-2.14.2.tar.xz">
+                https://downloads.sourceforge.net/freetype/freetype-doc-2.14.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">0514edfd6a7b480f753aa48789d7112038a218b0b06afdca320c4bcbc2f66e6b</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">ec49ba31c073c577e8a6abdaec8a4c69</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Fuse3 (3.18.1) - <span class="token">8,156
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "http://www.github.com/libfuse/libfuse/">http://www.github.com/libfuse/libfuse/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/libfuse/libfuse/releases/download/fuse-3.18.1/fuse-3.18.1.tar.gz">
+                https://github.com/libfuse/libfuse/releases/download/fuse-3.18.1/fuse-3.18.1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">dd395c88f29c7540bbdd0b830260ab8092ccb241bb6e66f603643f715fb9322c</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">07038308fe76c04f7544526b2becd734</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Gawk (5.3.2) - <span class="token">3,662
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/gawk/">https://www.gnu.org/software/gawk/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/gawk/gawk-5.3.2.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/gawk/gawk-5.3.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">b7014650c5f45e5d4837c31209dc0037</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">GCC (15.2.0) - <span class="token">98,688
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://gcc.gnu.org/">https://gcc.gnu.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">438fd996826b0c82485a29da03a72d71d6e3541a83ec702df4271f6fe025d24e</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">b861b092bf1af683c46a8aa2e689a6fd</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">GDBM (1.26) - <span class="token">1,198
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/gdbm/">https://www.gnu.org/software/gdbm/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/gdbm/gdbm-1.26.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/gdbm/gdbm-1.26.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">6a24504a14de4a744103dcb936be976df6fbe88ccff26065e54c1c47946f4a5e</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">aaa600665bc89e2febb3c7bd90679115</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Gettext (0.26) - <span class="token">9,926
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/gettext/">https://www.gnu.org/software/gettext/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/gettext/gettext-0.26.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/gettext/gettext-0.26.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">d1fb86e260cfe7da6031f94d2e44c0da55903dbae0a2fa0fae78c91ae1b56f00</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">8e14e926f088e292f5f2bce95b81d10e</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Glibc (2.42) - <span class="token">19,464
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/libc/">https://www.gnu.org/software/libc/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/glibc/glibc-2.42.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/glibc/glibc-2.42.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">d1775e32e4628e64ef930f435b67bb63af7599acb6be2b335b9f19f16509f17f</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">23c6f5a27932b435cae94e087cb8b1f5</code>
+              </p>
+              <div class="admon note">
+                <img alt="[Note]" src="../images/note.png" />
+                <h3>
+                  Note
+                </h3>
+                <p>
+                  The Glibc developers maintain a <a class="ulink" href=
+                  "https://sourceware.org/git/?p=glibc.git;a=shortlog;h=refs/heads/release/2.42/master">
+                  Git branch</a> containing patches considered worthy for
+                  Glibc-2.42 but unfortunately developed after Glibc-2.42
+                  release. The LFS editors will issue a security advisory if
+                  any security fix is added into the branch, but no actions
+                  will be taken for other newly added patches. You may review
+                  the patches yourself and incorporate some patches if you
+                  consider them important.
+                </p>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">GMP (6.3.0) - <span class="token">2,046
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/gmp/">https://www.gnu.org/software/gmp/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/gmp/gmp-6.3.0.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/gmp/gmp-6.3.0.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">956dc04e864001a9c22429f761f2c283</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Gperf (3.3) - <span class="token">1,789
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/gperf/">https://www.gnu.org/software/gperf/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/gperf/gperf-3.3.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/gperf/gperf-3.3.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">fd87e0aba7e43ae054837afd6cd4db03a3f2693deb3619085e6ed9d8d9604ad8</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">31753b021ea78a21f154bf9eecb8b079</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Grep (3.12) - <span class="token">1,874
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/grep/">https://www.gnu.org/software/grep/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/grep/grep-3.12.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/grep/grep-3.12.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">2649b27c0e90e632eadcd757be06c6e9a4f48d941de51e7c0f83ff76408a07b9</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">5d9301ed9d209c4a88c8d3a6fd08b9ac</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Groff (1.23.0) - <span class="token">7,259
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/groff/">https://www.gnu.org/software/groff/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/groff/groff-1.23.0.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/groff/groff-1.23.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">6b9757f592b7518b4902eb6af7e54570bdccba37a871fddb2d30ae3863511c13</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">5e4f40315a22bb8a158748e7d5094c7d</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">GRUB (2.12) - <span class="token">6,520
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/grub/">https://www.gnu.org/software/grub/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/grub/grub-2.12.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/grub/grub-2.12.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">f3c97391f7c4eaa677a78e090c7e97e6dc47b16f655f04683ebd37bef7fe0faa</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">60c564b1bdc39d8e43b3aab4bc0fb140</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">unifont (17.0.01) - <span class="token">1328
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://unifoundry.com/pub/unifont/unifont-17.0.01/font-builds/unifont-17.0.01.pcf.gz">
+                https://unifoundry.com/pub/unifont/unifont-17.0.01/font-builds/unifont-17.0.01.pcf.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">8240c381398a21f4eef993d16f0976d6a627e61054f0add275d195408f24efa9</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">c3fbc239da0fb49a9afc9b141f606ad4</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Gzip (1.14) - <span class="token">865
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/gzip/">https://www.gnu.org/software/gzip/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/gzip/gzip-1.14.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/gzip/gzip-1.14.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">01a7b881bd220bfdf615f97b8718f80bdfd3f6add385b993dcf6efd14e8c0ac6</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">4bf5a10f287501ee8e8ebe00ef62b2c2</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Hwdata (0.403) - <span class="token">2,516
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/vcrhonek/hwdata/archive/v0.403/hwdata-0.403.tar.gz">
+                https://github.com/vcrhonek/hwdata/archive/v0.403/hwdata-0.403.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">77d0a69e5558d16d33bbb510a09093deaf11c882baf9ef6ec5f18a8ef96e2c13</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">19c2aa3f46cd7fe25804e0a40d81d853</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Iana-Etc (20260123) - <span class=
+              "token">594 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.iana.org/protocols">https://www.iana.org/protocols</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/Mic92/iana-etc/releases/download/20260123/iana-etc-20260123.tar.gz">
+                https://github.com/Mic92/iana-etc/releases/download/20260123/iana-etc-20260123.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">30147a639c6173a7e26fbe748991582a86c190acee603f1fab8930a5b9dca37d</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">e2e96c36f5aaf0b85af50530d51b7302</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Inetutils (2.7) - <span class="token">3,084
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/inetutils/">https://www.gnu.org/software/inetutils/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/inetutils/inetutils-2.7.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/inetutils/inetutils-2.7.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">a156be1cde3c5c0ffefc262180d9369a60484087907aa554c62787d2f40ec086</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">eed294e7b170cbbb0ff86493ef4c1273</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Intltool (0.51.0) - <span class="token">159
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://freedesktop.org/wiki/Software/intltool">https://freedesktop.org/wiki/Software/intltool</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz">
+                https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">12e517cac2b57a0121cda351570f1e63</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">IPRoute2 (6.18.0) - <span class="token">924
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/utils/net/iproute2/">https://www.kernel.org/pub/linux/utils/net/iproute2/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.18.0.tar.xz">
+                https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.18.0.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">6ba520e1975e4c50dc931eeae91ea37c198b8a173744885f8895b84325f9d456</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">9e3f70620db43fe0ecab29b36a47914d</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Jinja2 (3.1.6) - <span class="token">240
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://jinja.palletsprojects.com/en/3.1.x/">https://jinja.palletsprojects.com/en/3.1.x/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://pypi.org/packages/source/J/Jinja2/jinja2-3.1.6.tar.gz">
+                https://pypi.org/packages/source/J/Jinja2/jinja2-3.1.6.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">66d4c25ff43d1deaf9637ccda523dec8</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Kbd (2.9.0) - <span class="token">1,492
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://kbd-project.org/">https://kbd-project.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/utils/kbd/kbd-2.9.0.tar.xz">
+                https://www.kernel.org/pub/linux/utils/kbd/kbd-2.9.0.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">fb3197f17a99eb44d22a3a1a71f755f9622dd963e66acfdea1a45120951b02ed</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">7be7c6f658f5fb9512e2c490349a8eeb</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Kmod (34.2) - <span class="token">434
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/kmod-project/kmod">https://github.com/kmod-project/kmod</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.2.tar.xz">
+                https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">5a5d5073070cc7e0c7a7a3c6ec2a0e1780850c8b47b3e3892226b93ffcb9cb54</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">36f2cc483745e81ede3406fa55e1065a</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Less (691) - <span class="token">964
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.greenwoodsoftware.com/less/">https://www.greenwoodsoftware.com/less/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.greenwoodsoftware.com/less/less-691.tar.gz">https://www.greenwoodsoftware.com/less/less-691.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">88b480eda1bb4f92009f7968b23189eaf1329211f5a3515869e133d286154d25</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">04c3f4620606205b2f17e51642166274</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">libaio (0.3.113) - <span class="token">48
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://pagure.io/libaio/archive/libaio-0.3.113/libaio-0.3.113.tar.gz">
+                https://pagure.io/libaio/archive/libaio-0.3.113/libaio-0.3.113.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">1c561c20670c5c09cc8437a622008c0693c6a7816c1f30332da3796953b2f454</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">605237f35de238dfacc83bcae406d95d</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libcap (2.77) - <span class="token">196
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://sites.google.com/site/fullycapable/">https://sites.google.com/site/fullycapable/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.77.tar.xz">
+                https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.77.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">897bc18b44afc26c70e78cead3dbb31e154acc24bee085a5a09079a88dbf6f52</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">58048c92f90ef8513c17fb9c24c2c1bd</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libffi (3.5.2) - <span class="token">1,390
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://sourceware.org/libffi/">https://sourceware.org/libffi/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz">
+                https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">f3a3082a23b37c293a4fcd1053147b371f2ff91fa7ea1b2a52e335676bac82dc</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">92af9efad4ba398995abf44835c5d9e9</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libidn2 (2.3.8) - <span class="token">2,184
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/libidn/libidn2-2.3.8.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/libidn/libidn2-2.3.8.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">a8e113e040d57a523684e141970eea7a</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libpipeline (1.5.8) - <span class=
+              "token">1,046 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://libpipeline.nongnu.org/">https://libpipeline.nongnu.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.8.tar.gz">
+                https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.8.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">1b1203ca152ccd63983c3f2112f7fe6fa5afd453218ede5153d1b31e11bb8405</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">17ac6969b2015386bcb5d278a08a40b5</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libpng (1.6.55) - <span class="token">1,040
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://downloads.sourceforge.net/libpng/libpng-1.6.55.tar.xz">
+                https://downloads.sourceforge.net/libpng/libpng-1.6.55.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">d925722864837ad5ae2a82070d4b2e0603dc72af44bd457c3962298258b8e82d</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">bc950b5a06ec1028285e14a127f6fb6e</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libpsl (0.21.5) - <span class="token">7448
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz">
+                https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">870a798ee9860b6e77896548428dba7b</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libtasn1 (4.21.0) - <span class=
+              "token">1,776 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/libtasn1/">https://www.gnu.org/software/libtasn1/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/libtasn1/libtasn1-4.21.0.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/libtasn1/libtasn1-4.21.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">1d8a444a223cc5464240777346e125de51d8e6abf0b8bac742ac84609167dc87</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">2ee1d9f3aa66f1e308c46a283aa9a8c2</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libtool (2.5.4) - <span class="token">1,033
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/libtool/">https://www.gnu.org/software/libtool/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/libtool/libtool-2.5.4.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/libtool/libtool-2.5.4.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">f81f5860666b0bc7d84baddefa60d1cb9fa6fceb2398cc3baca6afaa60266675</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">22e0a29df8af5fdde276ea3a7d351d30</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libunistring (1.4.1) - <span class=
+              "token">2,708 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/libunistring/libunistring-1.4.1.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/libunistring/libunistring-1.4.1.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">67d88430892527861903788868c77802a217b0959990f7449f2976126a307763</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">7419fcbca7c0b29d3b218a09a15cbc76</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libusb (1.0.29) - <span class="token">632
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://libusb.info/">https://libusb.info/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/libusb/libusb/releases/download/v1.0.29/libusb-1.0.29.tar.bz2">
+                https://github.com/libusb/libusb/releases/download/v1.0.29/libusb-1.0.29.tar.bz2</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">5977fc950f8d1395ccea9bd48c06b3f808fd3c2c961b44b0c2e6e29fc3a70a85</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">12d4a782ce606a0582fb5038c16d0f75</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Libxcrypt (4.5.2) - <span class="token">655
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/besser82/libxcrypt/">https://github.com/besser82/libxcrypt/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/besser82/libxcrypt/releases/download/v4.5.2/libxcrypt-4.5.2.tar.xz">
+                https://github.com/besser82/libxcrypt/releases/download/v4.5.2/libxcrypt-4.5.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">71513a31c01a428bccd5367a32fd95f115d6dac50fb5b60c779d5c7942aec071</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">25e888919ddcd153a07daa95224fa436</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Linux (6.6.120) - <span class=
+              "token">137,304 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.kernel.org/">https://www.kernel.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.120.tar.xz">
+                https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.120.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">405c332d59eedc4fd78863ff07a06c040dfeef651e58f022910a5ac953e4dc21</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">0ac9cce1a06545525322fcedd07e994d</code>
+              </p>
+              <div class="admon note">
+                <img alt="[Note]" src="../images/note.png" />
+                <h3>
+                  Note
+                </h3>
+                <p>
+                  The Linux kernel is updated quite frequently, many times
+                  due to discoveries of security vulnerabilities. The latest
+                  available stable kernel version may be used, unless the
+                  errata page says otherwise.
+                </p>
+                <p>
+                  For users with limited speed or expensive bandwidth who
+                  wish to update the Linux kernel, a baseline version of the
+                  package and patches can be downloaded separately. This may
+                  save some time or cost for a subsequent patch level upgrade
+                  within a minor release.
+                </p>
+                <p>
+                  As an example, for linux-6.6.120, the following could be
+                  downloaded:
+                </p>
+                <div class="itemizedlist">
+                  <ul class="compact">
+                    <li class="listitem">
+                      <p>
+                        <a class="ulink" href=
+                        "https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.tar.xz">
+                        https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.tar.xz</a>
+                      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                        <a class="ulink" href=
+                        "https://www.kernel.org/pub/linux/kernel/v6.x/patch-6.6.120.xz">
+                        https://www.kernel.org/pub/linux/kernel/v6.x/patch-6.6.120.xz</a>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  Then in <a class="xref" href=
+                  "../chapter05/linux-headers.html" title=
+                  "5.4.&nbsp;Linux-6.6.120 API Headers">Section&nbsp;5.4,
+                  “Linux-6.6.120 API Headers”</a> and <a class="xref" href=
+                  "../chapter10/kernel.html" title=
+                  "10.3.&nbsp;Linux-6.6.120">Section&nbsp;10.3,
+                  “Linux-6.6.120”</a> unpack the kernel, change to the
+                  package directory and then apply the patch with
+                  <strong class="userinput"><code>xzcat ../patch-6.6.120.xz |
+                  patch -Np1</code></strong>.
+                </p>
+                <p>
+                  At this point, if a newer point version of the kernel is
+                  needed, then only the newer patch is needed. However, if a
+                  new minor version is desired, then both full minor version
+                  and any desired patch will both need to be downloaded.
+                </p>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">LVM2 (2.03.38) - <span class="token">2,916
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.sourceware.org/lvm2/">https://www.sourceware.org/lvm2/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://sourceware.org/ftp/lvm2/LVM2.2.03.38.tgz">https://sourceware.org/ftp/lvm2/LVM2.2.03.38.tgz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">322d44bf40de318e6e6b52c56999aaeb86b16c8267187ac2e01a44d4dc526960</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">a661c55b5a1fcaa068b9e4a561c35f36</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Lz4 (1.10.0) - <span class="token">379
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://lz4.org/">https://lz4.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/lz4/lz4/releases/download/v1.10.0/lz4-1.10.0.tar.gz">
+                https://github.com/lz4/lz4/releases/download/v1.10.0/lz4-1.10.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">dead9f5f1966d9ae56e1e32761e4e675</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">M4 (1.4.20) - <span class="token">1,997
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/m4/">https://www.gnu.org/software/m4/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/m4/m4-1.4.20.tar.xz">https://mirror.csclub.uwaterloo.ca/gnu/m4/m4-1.4.20.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">e236ea3a1ccf5f6c270b1c4bb60726f371fa49459a8eaaebc90b216b328daf2b</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">6eb2ebed5b24e74b6e890919331d2132</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Make (4.4.1) - <span class="token">2,300
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/make/">https://www.gnu.org/software/make/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/make/make-4.4.1.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/make/make-4.4.1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">c8469a3713cbbe04d955d4ae4be23eeb</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Make-CA (1.16.1) - <span class="token">40
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/lfs-book/make-ca/archive/v1.16.1/make-ca-1.16.1.tar.gz">
+                https://github.com/lfs-book/make-ca/archive/v1.16.1/make-ca-1.16.1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">98c7e6fded1938b972d0177b5d5e925d318be87f84ee9e4cad680656a8c29414</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">bf9cea2d24fc5344d4951b49f275c595</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Man-DB (2.13.1) - <span class="token">2,061
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.nongnu.org/man-db/">https://www.nongnu.org/man-db/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://download.savannah.gnu.org/releases/man-db/man-db-2.13.1.tar.xz">
+                https://download.savannah.gnu.org/releases/man-db/man-db-2.13.1.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">8afebb6f7eb6bb8542929458841f5c7e6f240e30c86358c1fbcefbea076c87d9</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">b6335533cbeac3b24cd7be31fdee8c83</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Man-pages (6.16) - <span class="token">1,837
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.kernel.org/doc/man-pages/">https://www.kernel.org/doc/man-pages/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.16.tar.xz">
+                https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.16.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">8e247abd75cd80809cfe08696c81b8c70690583b045749484b242fb43631d7a3</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">4394eac3258137c8b549febeb04a7c33</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">MarkupSafe (3.0.3) - <span class="token">79
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://palletsprojects.com/p/markupsafe/">https://palletsprojects.com/p/markupsafe/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://pypi.org/packages/source/M/MarkupSafe/markupsafe-3.0.3.tar.gz">
+                https://pypi.org/packages/source/M/MarkupSafe/markupsafe-3.0.3.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">13a73126d25afa72a1ff0daed072f5fe</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Meson (1.10.1) - <span class="token">2,358
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://mesonbuild.com">https://mesonbuild.com</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/mesonbuild/meson/releases/download/1.10.1/meson-1.10.1.tar.gz">
+                https://github.com/mesonbuild/meson/releases/download/1.10.1/meson-1.10.1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">c42296f12db316a4515b9375a5df330f2e751ccdd4f608430d41d7d6210e4317</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">e1c12d275f8aae9fae71dff3d6891746</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">MPC (1.3.1) - <span class="token">756
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.multiprecision.org/">https://www.multiprecision.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/mpc/mpc-1.3.1.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/mpc/mpc-1.3.1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">5c9bc658c9fd0f940e8e3e0f09530c62</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">MPFR (4.2.2) - <span class="token">1,471
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.mpfr.org/">https://www.mpfr.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/mpfr/mpfr-4.2.2.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/mpfr/mpfr-4.2.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">7c32c39b8b6e3ae85f25156228156061</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Nano (8.7.1) - <span class="token">1,687
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.nano-editor.org/">https://www.nano-editor.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/nano/nano-8.7.1.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/nano/nano-8.7.1.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">76f0dcb248f2e2f1251d4ecd20fd30fb400a360a3a37c6c340e0a52c2d1cdedf</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">d873085c342e3670d108c08a0c3ebe2f</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Ncurses (6.6) - <span class="token">3,703
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/ncurses/">https://www.gnu.org/software/ncurses/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://invisible-mirror.net/archives/ncurses/ncurses-6.6.tar.gz">
+                https://invisible-mirror.net/archives/ncurses/ncurses-6.6.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">dd45bf6854430af403452a7a6a40652c</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Ninja (1.13.2) - <span class="token">286
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://ninja-build.org/">https://ninja-build.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/ninja-build/ninja/archive/v1.13.2/ninja-1.13.2.tar.gz">
+                https://github.com/ninja-build/ninja/archive/v1.13.2/ninja-1.13.2.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd1c0cbae17</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">76c00637fde44909cd7d56f8d73f2042</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">OpenSSH (10.2p1) - <span class="token">1,929
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.openssh.org/">https://www.openssh.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.2p1.tar.gz">
+                https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.2p1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">ccc42c0419937959263fa1dbd16dafc18c56b984c03562d2937ce56a60f798b2</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">801b5ad6da38e0045de20dd5dd2f6a80</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">OpenSSL (3.6.1) - <span class="token">53,606
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.openssl-library.org/">https://www.openssl-library.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz">
+                https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">b1bfedcd5b289ff22aee87c9d600f515767ebf45f77168cb6d64f231f518a82e</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">589777dc85ebbfeca70161c0c384d572</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">P11-kit (0.26.1) - <span class="token">1084
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://p11-glue.github.io/p11-glue/p11-kit.html">https://p11-glue.github.io/p11-glue/p11-kit.html</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/p11-glue/p11-kit/releases/download/0.26.1/p11-kit-0.26.1.tar.xz">
+                https://github.com/p11-glue/p11-kit/releases/download/0.26.1/p11-kit-0.26.1.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">4769f81483a28040cce1dac09a99599f787a8e0dc239a3089d4b0f676b7c4561</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">c5ef8b487869233ba58973a91dcfdf26</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Packaging (26.0) - <span class="token">141
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://pypi.org/project/packaging/">https://pypi.org/project/packaging/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://files.pythonhosted.org/packages/source/p/packaging/packaging-26.0.tar.gz">
+                https://files.pythonhosted.org/packages/source/p/packaging/packaging-26.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">2cbdbb5754f038736c3c361826c6872a</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Patch (2.8) - <span class="token">886
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://savannah.gnu.org/projects/patch/">https://savannah.gnu.org/projects/patch/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/patch/patch-2.8.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/patch/patch-2.8.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">f87cee69eec2b4fcbf60a396b030ad6aa3415f192aa5f7ee84cad5e11f7f5ae3</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">149327a021d41c8f88d034eab41c039f</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Pciutils (3.14.0) - <span class="token">708
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://mj.ucw.cz/sw/pciutils/">https://mj.ucw.cz/sw/pciutils/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mj.ucw.cz/download/linux/pci/pciutils-3.14.0.tar.gz">
+                https://mj.ucw.cz/download/linux/pci/pciutils-3.14.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">e31c79722dbbe9d2906b92996ce295268e54d4342fefe3ff476caa613e51be2a</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">f70cf2da9377cb484802e291ea60115d</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Pcre2 (10.47) - <span class="token">2,096
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/PCRE2Project/pcre2/">https://github.com/PCRE2Project/pcre2/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2">
+                https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">47fe8c99461250d42f89e6e8fdaeba9da057855d06eb7fc08d9ca03fd08d7bc7</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">aded5840ab5a7d772dd4e16fc294b665</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Perl (5.42.0) - <span class="token">14,084
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.perl.org/">https://www.perl.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.cpan.org/src/5.0/perl-5.42.0.tar.xz">https://www.cpan.org/src/5.0/perl-5.42.0.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">73cf6cc1ea2b2b1c110a18c14bbbc73a362073003893ffcedc26d22ebdbdd0c3</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">7a6950a9f12d01eb96a9d2ed2f4e0072</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Pkgconf (2.5.1) - <span class="token">321
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/pkgconf/pkgconf">https://github.com/pkgconf/pkgconf</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz">
+                https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">cd05c9589b9f86ecf044c10a2269822bc9eb001eced2582cfffd658b0a50c243</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">3291128c917fdb8fccd8c9e7784b643b</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Popt (1.19) - <span class="token">584
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/popt-1.19.tar.gz">
+                https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/popt-1.19.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">c25a4838fc8e4c1c8aacb8bd620edb3084a3d63bf8987fdad3ca2758c63240f9</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">eaa2135fddb6eb03f2c87ee1823e5a78</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Procps (4.0.5) - <span class="token">1,483
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://gitlab.com/procps-ng/procps/">https://gitlab.com/procps-ng/procps/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz">
+                https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">c2e6d193cc78f84cd6ddb72aaf6d5c6a9162f0470e5992092057f5ff518562fa</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">90803e64f51f192f3325d25c3335d057</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Psmisc (23.7) - <span class="token">423
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://gitlab.com/psmisc/psmisc">https://gitlab.com/psmisc/psmisc</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-23.7.tar.xz">
+                https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-23.7.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">58c55d9c1402474065adae669511c191de374b0871eec781239ab400b907c327</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">53eae841735189a896d614cba440eb10</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Python (3.14.2) - <span class="token">23,014
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.python.org/">https://www.python.org/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.python.org/ftp/python/3.14.2/Python-3.14.2.tar.xz">
+                https://www.python.org/ftp/python/3.14.2/Python-3.14.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">ce543ab854bc256b61b71e9b27f831ffd1bfd60a479d639f8be7f9757cf573e9</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">19a31b2838db3b53f9f2db8782bf8773</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Python Documentation (3.14.2) - <span class=
+              "token">10,525 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.python.org/ftp/python/doc/3.14.2/python-3.14.2-docs-html.tar.bz2">
+                https://www.python.org/ftp/python/doc/3.14.2/python-3.14.2-docs-html.tar.bz2</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">d72a50b427913492be4c8eacfa66618096be9163bf27b97a651fd96bfec4df3d</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">43371faecf09acafc877b54df75871bd</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Readline (8.3) - <span class="token">3,340
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://tiswww.case.edu/php/chet/readline/rltop.html">https://tiswww.case.edu/php/chet/readline/rltop.html</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/readline/readline-8.3.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/readline/readline-8.3.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">25a73bfb2a3ad7146c5e9d4408d9f6cd</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Sed (4.9) - <span class="token">1,365
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/sed/">https://www.gnu.org/software/sed/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/sed/sed-4.9.tar.xz">https://mirror.csclub.uwaterloo.ca/gnu/sed/sed-4.9.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">6aac9b2dbafcd5b7a67a8a9bcb8036c3</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Setuptools (80.10.2) - <span class=
+              "token">1,173 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://pypi.org/project/setuptools/">https://pypi.org/project/setuptools/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://pypi.org/packages/source/s/setuptools/setuptools-80.10.2.tar.gz">
+                https://pypi.org/packages/source/s/setuptools/setuptools-80.10.2.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">9099b30197f56758b611ff2b6ec00e0e</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Shadow (4.19.2) - <span class="token">2,285
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/shadow-maint/shadow/">https://github.com/shadow-maint/shadow/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/shadow-maint/shadow/releases/download/4.19.2/shadow-4.19.2.tar.xz">
+                https://github.com/shadow-maint/shadow/releases/download/4.19.2/shadow-4.19.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">f4b73a206169e426c13d418947a9b9ebce71117c108136e0846c4b7d88e41120</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">8af944a9e943ad9b5847b9d62699ef3c</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Sqlite (3510200) - <span class="token">3,134
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://sqlite.org">https://sqlite.org</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://sqlite.org/2026/sqlite-autoconf-3510200.tar.gz">https://sqlite.org/2026/sqlite-autoconf-3510200.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">fbd89f866b1403bb66a143065440089dd76100f2238314d92274a082d4f2b7bb</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">49600a5739d382c648b1a317e4b57446</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Sqlite Documentation (3510200) -
+              <span class="token">6,109 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://sqlite.org">https://sqlite.org</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://anduin.linuxfromscratch.org/LFS/sqlite-doc-3510200.tar.xz">
+                https://anduin.linuxfromscratch.org/LFS/sqlite-doc-3510200.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">67bea3306a431ad5ab0ca7609abcecc3a6bde4f8d87bb92d0d8353bb9401e0cc</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">6f798c5dcd409ee563684c70be7e16fe</code>
+              </p>
+              <div class="admon note">
+                <img alt="[Note]" src="../images/note.png" />
+                <h3>
+                  Note
+                </h3>
+                <p>
+                  The Linux From Scratch team generates its own tarball of
+                  the documentation pages using the sqlite documentation zip
+                  file. This is done in order to avoid unnecessary
+                  dependencies.
+                </p>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Systemd (259) - <span class="token">16,846
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://systemd.io">https://systemd.io</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/systemd/systemd/archive/v259/systemd-259.tar.gz">
+                https://github.com/systemd/systemd/archive/v259/systemd-259.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">a84123692d1add7f9c48fd11cdf5f901393008c2d2ade667c18f25a20bf1290d</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">5c5e5c1c43d4ee5e5648e7ab118ac476</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Systemd Man Pages (259) - <span class=
+              "token">769 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://systemd.io">https://systemd.io</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-259.tar.xz">
+                https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-259.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">054623ec48e0df58afb16b080f0b3292b61f003b9e3412243aa3b7fc4aabedc2</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">12897db690de993938888f7c8b4b637e</code>
+              </p>
+              <div class="admon note">
+                <img alt="[Note]" src="../images/note.png" />
+                <h3>
+                  Note
+                </h3>
+                <p>
+                  The Linux From Scratch team generates its own tarball of
+                  the man pages using the systemd source. This is done in
+                  order to avoid unnecessary dependencies.
+                </p>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Tar (1.35) - <span class="token">2,263
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/tar/">https://www.gnu.org/software/tar/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/tar/tar-1.35.tar.xz">https://mirror.csclub.uwaterloo.ca/gnu/tar/tar-1.35.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">a2d8042658cfd8ea939e6d911eaf4152</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Tcl (8.6.17) - <span class="token">11,450
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://tcl.sourceforge.net/">https://tcl.sourceforge.net/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://downloads.sourceforge.net/tcl/tcl8.6.17-src.tar.gz">https://downloads.sourceforge.net/tcl/tcl8.6.17-src.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">a3903371efcce8a405c5c245d029e9f6850258a60fa3761c4d58995610949b31</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">1ec3444533f54d0f86cd120058e15e48</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Tcl Documentation (8.6.17) - <span class=
+              "token">1,170 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://downloads.sourceforge.net/tcl/tcl8.6.17-html.tar.gz">
+                https://downloads.sourceforge.net/tcl/tcl8.6.17-html.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">879db5fc7e618eee5a375d74d715f0f1c730eebcff1181153b5fdfcb61662b4b</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">60c71044e723b0db5f21be82929f3534</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Texinfo (7.2) - <span class="token">6,259
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/texinfo/">https://www.gnu.org/software/texinfo/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/texinfo/texinfo-7.2.tar.xz">
+                https://mirror.csclub.uwaterloo.ca/gnu/texinfo/texinfo-7.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">0329d7788fbef113fa82cb80889ca197a344ce0df7646fe000974c5d714363a6</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">11939a7624572814912a18e76c8d8972</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Time Zone Data (2025c) - <span class=
+              "token">460 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.iana.org/time-zones">https://www.iana.org/time-zones</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.iana.org/time-zones/repository/releases/tzdata2025c.tar.gz">
+                https://www.iana.org/time-zones/repository/releases/tzdata2025c.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">4aa79e4effee53fc4029ffe5f6ebe97937282ebcdf386d5d2da91ce84142f957</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">7250c862872c33104b73e7d0bd3cb25f</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Util-linux (2.41.3) - <span class=
+              "token">9,246 KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/">
+                https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.xz">
+                https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">3330d873f0fceb5560b89a7dc14e4f3288bbd880e96903ed9b50ec2b5799e58b</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">d2faa85303dea29e7f6ee40a9465e528</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Usb-utils (019) - <span class="token">120
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Download: <a class="ulink" href=
+                "https://kernel.org/pub/linux/utils/usb/usbutils/usbutils-019.tar.xz">
+                https://kernel.org/pub/linux/utils/usb/usbutils/usbutils-019.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">659f40c440e31ba865c52c818a33d3ba6a97349e3353f8b1985179cb2aa71ec5</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">67a8eb4782540058d0648f83ecabdf6c</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Vim (9.1.2131) - <span class="token">19,060
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.vim.org">https://www.vim.org</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/vim/vim/archive/v9.1.2131/vim-9.1.2131.tar.gz">
+                https://github.com/vim/vim/archive/v9.1.2131/vim-9.1.2131.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">17278f6733aa742827d783bf5f38269b1a89f5e079e7549f9d82c29e19139ac8</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">6d8a57f99c1b183d4a0fb975b7e83ca4</code>
+              </p>
+              <div class="admon note">
+                <img alt="[Note]" src="../images/note.png" />
+                <h3>
+                  Note
+                </h3>
+                <p>
+                  The version of vim changes daily. To get the latest
+                  version, go to <a class="ulink" href=
+                  "https://github.com/vim/vim/tags">https://github.com/vim/vim/tags</a>.
+                </p>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Wget (1.25.0) - <span class="token">5,144
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://www.gnu.org/software/software/wget/">https://www.gnu.org/software/software/wget/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/wget/wget-1.25.0.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/wget/wget-1.25.0.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">c70ba58b36f944e8ba1d655ace552881</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Wheel (0.46.3) - <span class="token">60
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://pypi.org/project/wheel/">https://pypi.org/project/wheel/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://pypi.org/packages/source/w/wheel/wheel-0.46.3.tar.gz">
+                https://pypi.org/packages/source/w/wheel/wheel-0.46.3.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">61fb0c9633fe7492933a8f338db23508</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Which (2.23) - <span class="token">197
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://savannah.gnu.org/projects/which/">https://savannah.gnu.org/projects/which/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://mirror.csclub.uwaterloo.ca/gnu/which/which-2.23.tar.gz">
+                https://mirror.csclub.uwaterloo.ca/gnu/which/which-2.23.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">a2c558226fc4d9e4ce331bd2fd3c3f17f955115d2c00e447618a4ef9978a2a73</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">1963b85914132d78373f02a84cdb3c86</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">XML::Parser (2.47) - <span class="token">276
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://github.com/chorny/XML-Parser">https://github.com/chorny/XML-Parser</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz">
+                https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">ad4aae643ec784f489b956abe952432871a622d4e2b5c619e8855accbfc4d1d8</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">89a8e82cfd2ad948b349c0a69c494463</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Xz Utils (5.8.2) - <span class="token">1,476
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://tukaani.org/xz">https://tukaani.org/xz</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com//tukaani-project/xz/releases/download/v5.8.2/xz-5.8.2.tar.xz">
+                https://github.com//tukaani-project/xz/releases/download/v5.8.2/xz-5.8.2.tar.xz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">890966ec3f5d5cc151077879e157c0593500a522f413ac50ba26d22a9a145214</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">87c8bb8addf7189d3a51f6a5f03163fc</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Zlib (1.3.1) - <span class="token">1,478
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://zlib.net/">https://zlib.net/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://zlib.net/fossils/zlib-1.3.1.tar.gz">https://zlib.net/fossils/zlib-1.3.1.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">9855b6d802d7fe5b7bd5b196a2271655</code>
+              </p>
+            </dd>
+            <dt>
+              <span class="term">Zstd (1.5.7) - <span class="token">2,378
+              KB</span>:</span>
+            </dt>
+            <dd>
+              <p>
+                Home page: <a class="ulink" href=
+                "https://facebook.github.io/zstd/">https://facebook.github.io/zstd/</a>
+              </p>
+              <p>
+                Download: <a class="ulink" href=
+                "https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz">
+                https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz</a>
+              </p>
+              <p>
+                SHA256 sum: <code class=
+                "literal">eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3</code>
+              </p>
+              <p>
+                MD5 sum: <code class=
+                "literal">780fc1896922b1bc52a4e90980cdda48</code>
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <p>
+        Total size of these packages: about 636 MB
+      </p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">Prev</a>
+          <p>
+            Introduction
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="patches.html" title=
+          "Needed Patches">Next</a>
+          <p>
+            Needed Patches
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter03.html" title=
+          "Chapter&nbsp;3.&nbsp;Packages and Patches">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Zirconium Cross Linux From Scratch - AArch64 Version r1.0-wip-systemd">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
