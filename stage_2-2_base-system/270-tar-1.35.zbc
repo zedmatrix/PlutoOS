@@ -1,0 +1,44 @@
+pkgdir=[tar-1.35]
+pkgname=[tar]
+pkgver=[1.35]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/tar/tar-1.35.tar.xz]
+md5sum=[a2d8042658cfd8ea939e6d911eaf4152]
+
+extract=[ xtar /sources/tar-1.35.tar.xz ]
+
+prepare=[ FORCE_UNSAFE_CONFIGURE=1 ./configure --prefix=/usr ]
+# real    5m26.106s
+# user    3m3.250s
+# sys     2m20.610s
+
+build=[ make ]
+# real    2m3.803s
+# user    5m39.286s
+# sys     0m49.299s
+
+check=[ make check ]
+# real    8m19.804s
+# user    7m43.694s
+# sys     10m5.845s
+
+install=[ make install ]
+# real    0m8.082s
+# user    0m4.576s
+# sys     0m4.204s
+
+post=[ make -C doc install-html docdir=/usr/share/doc/tar-1.35 ]
+# real    0m40.767s
+# user    0m38.531s
+# sys     0m1.483s
+
+clean=[ cd ../ && rm -rf tar-1.35 ]
+
+# ## ------------- ##
+# ## Test results. ##
+# ## ------------- ##
+#
+# 223 tests were successful.
+# 21 tests were skipped.

@@ -1,0 +1,58 @@
+pkgdir=[coreutils-9.10]
+pkgname=[coreutils]
+pkgver=[9.10]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/coreutils/coreutils-9.10.tar.xz]
+md5sum=[b0482ebec42fd48e95cb9187d566b9e4]
+
+patchurl=[https://www.linuxfromscratch.org/patches/downloads/coreutils/coreutils-9.10-i18n-1.patch]
+patchmd5=[6e9aea31b1662176101e6438a39fdad4]
+
+extract=[ xtar /sources/coreutils-9.10.tar.xz ]
+
+preconfig=[ patch -Np1 -i /sources/coreutils-9.10-i18n-1.patch ]
+
+prepare=[ autoreconf -fv; automake -af; FORCE_UNSAFE_CONFIGURE=1 ./configure --prefix=/usr --enable-no-install-program=kill,uptime;
+]
+# real    14m15.150s
+# user    9m22.675s
+# sys     4m44.290s
+
+build=[ make ]
+# real    6m33.234s
+# user    17m57.585s
+# sys     3m45.763s
+
+check=[ make NON_ROOT_USERNAME=tester check-root
+  groupadd -g 102 dummy -U tester
+  chown -R tester .
+  su tester -c "PATH=$PATH make -k RUN_EXPENSIVE_TESTS=yes check" < /dev/null
+  groupdel dummy
+]
+# real    0m32.085s
+# user    0m30.441s
+# sys     0m51.066s
+
+install=[ make install ]
+# real    0m18.096s
+# user    0m11.094s
+# sys     0m9.371s
+
+post=[ mv -v /usr/bin/chroot /usr/sbin
+  mv -v /usr/share/man/man1/chroot.1 /usr/share/man/man8/chroot.8
+  sed -i 's/"1"/"8"/' /usr/share/man/man8/chroot.8
+]
+
+clean=[ cd ../ && rm -rf coreutils-9.10 ]
+
+# Testsuite summary for GNU coreutils 9.10
+# ============================================================================
+# # TOTAL: 41
+# # PASS:  21
+# # SKIP:  19
+# # XFAIL: 0
+# # FAIL:  1
+# # XPASS: 0
+# # ERROR: 0
+# FAIL tests/nproc/nproc-quota.sh (exit status: 1)

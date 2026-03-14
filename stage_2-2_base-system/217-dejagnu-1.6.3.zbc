@@ -1,0 +1,38 @@
+pkgdir=[dejagnu-1.6.3]
+pkgname=[dejagnu]
+pkgver=[1.6.3]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/dejagnu/dejagnu-1.6.3.tar.gz]
+md5sum=[68c5208c58236eba447d7d6d1326b821]
+
+extract=[ xtar /sources/dejagnu-1.6.3.tar.gz ]
+
+prepare=[ mcd build && ../configure --prefix=/usr ]
+# real    0m10.143s
+# user    0m5.010s
+# sys     0m5.502s
+
+build=[ cd build &&
+  makeinfo --html --no-split -o doc/dejagnu.html ../doc/dejagnu.texi
+  makeinfo --plaintext -o doc/dejagnu.txt  ../doc/dejagnu.texi
+]
+# real    0m17.259s
+# user    0m16.467s
+# sys     0m0.551s
+#
+# real    0m16.347s
+# user    0m15.815s
+# sys     0m0.315s
+
+
+install=[ cd build && make install ]
+# real    0m0.795s
+# user    0m0.743s
+# sys     0m1.159s
+
+post=[ cd build && install -v -dm755 /usr/share/doc/dejagnu-1.6.3
+ install -v -m644 doc/dejagnu.{html,txt} /usr/share/doc/dejagnu-1.6.3
+]
+
+clean=[ cd ../../ && rm -rf dejagnu-1.6.3 ]

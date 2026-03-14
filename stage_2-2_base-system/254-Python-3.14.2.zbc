@@ -1,0 +1,69 @@
+pkgdir=[Python-3.14.2]
+pkgname=[Python]
+pkgver=[3.14.2]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.python.org/ftp/python/3.14.2/Python-3.14.2.tar.xz]
+md5sum=[19a31b2838db3b53f9f2db8782bf8773]
+
+docurl=[https://www.python.org/ftp/python/doc/3.14.2/python-3.14.2-docs-html.tar.bz2]
+docmd5=[43371faecf09acafc877b54df75871bd]
+
+extract=[ xtar /sources/Python-3.14.2.tar.xz ]
+
+prepare=[ sed -e "/self.namespaceURI =/i\        self.ownerDocument = None" -i Lib/xml/dom/minidom.py
+  ./configure --prefix=/usr --enable-shared --with-system-expat \
+  --enable-optimizations --without-static-libpython --disable-test-modules
+]
+# real    5m20.208s
+# user    2m58.956s
+# sys     2m21.947s
+
+build=[ make PROFILE_TASK="-m test --pgo --ignore 'test.test_re.ReTests.test_locale_caching' --ignore 'test.test_re.ReTests.test_locale_compiled'" ]
+# Checked 114 modules (36 built-in, 62 shared, 1 n/a on linux-aarch64, 14 disabled, 1 missing, 0 failed on import)
+# real    69m3.747s
+# user    182m45.568s
+# sys     10m22.607s
+
+check=[ make test TESTOPTS="--timeout 120" ]
+# real    34m45.535s
+# user    91m12.374s
+# sys     13m38.680s
+
+install=[ make install ]
+
+post=[ install -v -dm755 /usr/share/doc/python-3.13.5/html
+  tar --strip-components=1 --no-same-owner --no-same-permissions \
+    -C /usr/share/doc/python-3.13.5/html \
+    -xvf /sources/python-3.13.5-docs-html.tar.bz2
+  cat > /etc/pip.conf << EOF
+[global]
+root-user-action = ignore
+disable-pip-version-check = true
+EOF
+
+]
+
+clean=[ cd ../ && rm -rf Python-3.14.2 ]
+
+# 35 tests failed:
+#     test.test_concurrent_futures.test_deadlock
+#     test.test_concurrent_futures.test_process_pool
+#     test.test_concurrent_futures.test_shutdown
+#     test.test_inspect.test_inspect
+#     test.test_multiprocessing_fork.test_misc
+#     test.test_multiprocessing_fork.test_processes
+#     test.test_multiprocessing_forkserver.test_manager
+#     test.test_multiprocessing_forkserver.test_misc
+#     test.test_multiprocessing_forkserver.test_processes
+#     test.test_multiprocessing_spawn.test_manager
+#     test.test_multiprocessing_spawn.test_misc
+#     test.test_multiprocessing_spawn.test_processes test_atexit
+#     test_call test_class test_cmd test_code test_ctypes test_decimal
+#     test_embed test_interpreters test_multiprocessing_main_handling
+#     test_pdb test_pickle test_posix test_readline test_regrtest
+#     test_socket test_subprocess test_sys test_tarfile test_threading
+#     test_traceback test_types test_zipfile
+#
+# 409 tests OK.

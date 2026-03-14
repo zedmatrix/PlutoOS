@@ -1,0 +1,42 @@
+pkgdir=[diffutils-3.12]
+pkgname=[diffutils]
+pkgver=[3.12]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/diffutils/diffutils-3.12.tar.xz]
+md5sum=[d1b18b20868fb561f77861cd90b05de4]
+
+extract=[ xtar /sources/diffutils-3.12.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr ]
+# real    4m53.085s
+# user    2m45.713s
+# sys     2m3.679s
+
+build=[ make ]
+# real    1m38.116s
+# user    4m1.651s
+# sys     0m48.962s
+
+check=[ make check ]
+# real    6m3.904s
+# user    11m44.448s
+# sys     4m5.409s
+
+install=[ make install ]
+# real    0m8.523s
+# user    0m4.624s
+# sys     0m4.306s
+
+clean=[ cd ../ && rm -rf diffutils-3.12 ]
+
+# Testsuite summary for GNU diffutils 3.12
+# ============================================================================
+# # TOTAL: 344
+# # PASS:  277
+# # SKIP:  67
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

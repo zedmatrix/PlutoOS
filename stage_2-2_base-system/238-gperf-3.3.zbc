@@ -1,0 +1,28 @@
+pkgdir=[gperf-3.3]
+pkgname=[gperf]
+pkgver=[3.3]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/gperf/gperf-3.3.tar.gz]
+md5sum=[31753b021ea78a21f154bf9eecb8b079]
+
+extract=[ xtar /sources/gperf-3.3.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/gperf-3.3 ]
+# real    1m51.934s
+# user    1m0.857s
+# sys     0m52.104s
+
+build=[ make ]
+# real    0m23.543s
+# user    0m57.684s
+# sys     0m9.856s
+
+check=[ make check ]
+
+install=[ make install ]
+# real    0m0.763s
+# user    0m0.388s
+# sys     0m0.361s
+
+clean=[ cd ../ && rm -rf gperf-3.3 ]

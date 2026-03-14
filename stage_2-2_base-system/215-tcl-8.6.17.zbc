@@ -1,0 +1,61 @@
+pkgdir=[tcl-8.6.17]
+pkgname=[tcl]
+pkgver=[8.6.17]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://downloads.sourceforge.net/tcl/tcl8.6.17-src.tar.gz]
+md5sum=[1ec3444533f54d0f86cd120058e15e48]
+
+docurl=[https://downloads.sourceforge.net/tcl/tcl8.6.17-html.tar.gz]
+docmd5=[60c71044e723b0db5f21be82929f3534]
+
+extract=[ xtar /sources/tcl8.6.17-src.tar.gz ]
+
+prepare=[ cd unix && ./configure --prefix=/usr --mandir=/usr/share/man --disable-rpath ]
+# real    1m28.343s
+# user    0m46.321s
+# sys     0m47.337s
+
+build=[ SRCDIR=$(pwd)
+  cd unix
+  make
+  sed -e "s|$SRCDIR/unix|/usr/lib|" \
+      -e "s|$SRCDIR|/usr/include|" -i tclConfig.sh
+  sed -e "s|$SRCDIR/unix/pkgs/tdbc1.1.12|/usr/lib/tdbc1.1.12|" \
+      -e "s|$SRCDIR/pkgs/tdbc1.1.12/generic|/usr/include|"    \
+      -e "s|$SRCDIR/pkgs/tdbc1.1.12/library|/usr/lib/tcl8.6|" \
+      -e "s|$SRCDIR/pkgs/tdbc1.1.12|/usr/include|" -i pkgs/tdbc1.1.12/tdbcConfig.sh
+  sed -e "s|$SRCDIR/unix/pkgs/itcl4.3.4|/usr/lib/itcl4.3.4|" \
+      -e "s|$SRCDIR/pkgs/itcl4.3.4/generic|/usr/include|"    \
+      -e "s|$SRCDIR/pkgs/itcl4.3.4|/usr/include|" -i pkgs/itcl4.3.4/itclConfig.sh
+]
+# real    20m26.532s
+# user    30m6.432s
+# sys     2m37.235s
+check=[ make test ]
+# real    8m23.071s
+# user    5m6.302s
+# sys     0m43.181s
+## Test files exiting with errors:  thread.test
+
+install=[ cd unix
+  make install
+  make install-private-headers
+]
+# real    1m12.639s
+# user    1m3.955s
+# sys     1m51.290s
+
+
+post=[ chmod -v u+w /usr/lib/libtcl8.6.so
+  ln -sfv tclsh8.6 /usr/bin/tclsh
+  mv /usr/share/man/man3/{Thread,Tcl_Thread}.3
+]
+
+postconfig=[ tar -xf /sources/tcl8.6.17-html.tar.gz --strip-components=1
+  mkdir -v -p /usr/share/doc/tcl-8.6.17
+  cp -v -r  ./html/* /usr/share/doc/tcl-8.6.17
+]
+
+clean=[ cd ../../ && rm -rf tcl8.6.17 ]

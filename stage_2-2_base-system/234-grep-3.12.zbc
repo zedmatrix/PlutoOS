@@ -1,0 +1,43 @@
+pkgdir=[grep-3.12]
+pkgname=[grep]
+pkgver=[3.12]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/grep/grep-3.12.tar.xz]
+md5sum=[5d9301ed9d209c4a88c8d3a6fd08b9ac]
+
+extract=[ xtar /sources/grep-3.12.tar.xz ]
+
+prepare=[ sed -i "s/echo/#echo/" src/egrep.sh
+	./configure --prefix=/usr
+]
+# real    4m52.781s
+# user    2m45.338s
+# sys     2m4.699s
+
+build=[ make ]
+# real    1m34.491s
+# user    3m30.628s
+# sys     0m41.572s
+
+check=[ make check ]
+# real    6m30.928s
+# user    11m38.835s
+# sys     7m54.807s
+
+install=[ make install ]
+# real    0m7.960s
+# user    0m4.376s
+# sys     0m4.312s
+
+clean=[ cd ../ && rm -rf grep-3.12 ]
+
+# Testsuite summary for GNU grep 3.12
+# ============================================================================
+# # TOTAL: 315
+# # PASS:  262
+# # SKIP:  53
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

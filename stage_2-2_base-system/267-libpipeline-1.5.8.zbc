@@ -1,0 +1,27 @@
+pkgdir=[libpipeline-1.5.8]
+pkgname=[libpipeline]
+pkgver=[1.5.8]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.8.tar.gz]
+md5sum=[17ac6969b2015386bcb5d278a08a40b5]
+
+extract=[ xtar /sources/libpipeline-1.5.8.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr gl_cv_func_working_error=no ]
+# real    3m13.368s
+# user    1m43.874s
+# sys     1m30.567s
+
+build=[ make ]
+# real    0m50.250s
+# user    1m12.698s
+# sys     0m38.101s
+
+install=[ make install ]
+# real    0m4.547s
+# user    0m2.012s
+# sys     0m2.913s
+
+clean=[ cd ../ && rm -rf libpipeline-1.5.8 ]

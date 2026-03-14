@@ -1,0 +1,22 @@
+pkgdir=[whois-5.6.5]
+pkgname=[whois]
+pkgver=[5.6.5]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://github.com/rfc1036/whois/archive/v5.6.5/whois-5.6.5.tar.gz]
+md5sum=[d423ff27c850ec8e9293ea018d725519]
+
+extract=[ xtar /sources/whois-5.6.5.tar.gz ]
+
+# Fix a compile error in the ja.po translation
+prepare=[ rm -v po/ja.mo; sed -i 's/ja.mo//' po/Makefile ]
+
+build=[ make ]
+
+install=[ make prefix=/usr install-whois
+  make prefix=/usr install-mkpasswd
+  make prefix=/usr install-pos
+]
+
+clean=[ cd ../ && rm -rf whois-5.6.5 ]

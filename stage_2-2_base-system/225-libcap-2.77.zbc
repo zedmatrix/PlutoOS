@@ -1,0 +1,29 @@
+pkgdir=[libcap-2.77]
+pkgname=[libcap]
+pkgver=[2.77]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.77.tar.xz]
+md5sum=[58048c92f90ef8513c17fb9c24c2c1bd]
+
+extract=[ xtar /sources/libcap-2.77.tar.xz ]
+
+prepare=[ sed -i '/install -m.*STA/d' libcap/Makefile ]
+
+build=[ make prefix=/usr lib=lib ]
+# real    0m22.343s
+# user    0m29.292s
+# sys     0m6.995s
+
+check=[ make test ]
+# real    0m6.320s
+# user    0m6.093s
+# sys     0m3.088s
+# PASSED
+
+install=[ make prefix=/usr lib=lib install ]
+# real    0m3.725s
+# user    0m1.420s
+# sys     0m2.270s
+
+clean=[ cd ../ && rm -rf libcap-2.77 ]

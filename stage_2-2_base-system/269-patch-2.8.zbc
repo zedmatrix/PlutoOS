@@ -1,0 +1,42 @@
+pkgdir=[patch-2.8]
+pkgname=[patch]
+pkgver=[2.8]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/patch/patch-2.8.tar.xz]
+md5sum=[149327a021d41c8f88d034eab41c039f]
+
+extract=[ xtar /sources/patch-2.8.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr ]
+# real    3m30.422s
+# user    1m58.048s
+# sys     1m29.069s
+
+build=[ make ]
+# real    0m39.660s
+# user    1m49.567s
+# sys     0m19.750s
+
+check=[ make check ]
+# real    0m21.742s
+# user    0m17.381s
+# sys     0m40.016s
+
+install=[ make install ]
+# real    0m3.182s
+# user    0m1.904s
+# sys     0m1.464s
+
+clean=[ cd ../ && rm -rf patch-2.8 ]
+
+# Testsuite summary for GNU patch 2.8
+# ============================================================================
+# # TOTAL: 49
+# # PASS:  45
+# # SKIP:  2
+# # XFAIL: 2
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

@@ -1,0 +1,31 @@
+#!/bin/sh
+pkgdir=[pkgconf-2.5.1]
+pkgname=[pkgconf]
+pkgver=[2.5.1]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz]
+md5sum=[3291128c917fdb8fccd8c9e7784b643b]
+
+extract=[ xtar /sources/pkgconf-2.5.1.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/pkgconf-2.5.1 ]
+# real    0m35.609s
+# user    0m17.456s
+# sys     0m20.242s
+
+build=[ make ]
+# real    0m18.642s
+# user    0m51.608s
+# sys     0m11.479s
+
+install=[ make install ]
+# real    0m2.450s
+# user    0m1.412s
+# sys     0m2.234s
+
+post=[ ln -sv pkgconf /usr/bin/pkg-config
+  ln -sv pkgconf.1 /usr/share/man/man1/pkg-config.1
+]
+
+clean=[ cd ../ && rm -rf pkgconf-2.5.1 ]

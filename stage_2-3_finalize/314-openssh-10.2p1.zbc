@@ -1,0 +1,65 @@
+pkgdir=[openssh-10.2p1]
+pkgname=[openssh]
+pkgver=[10.2p1]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.2p1.tar.gz]
+md5sum=[801b5ad6da38e0045de20dd5dd2f6a80]
+
+extract=[ xtar /sources/openssh-10.2p1.tar.gz ]
+
+preconfig=[ install -v -g sys -m700 -d /var/lib/sshd
+  groupadd -g 50 sshd
+  useradd -c 'sshd PrivSep' -d /var/lib/sshd -g sshd -s /bin/false -u 50 sshd
+]
+
+prepare=[ ./configure --prefix=/usr --sysconfdir=/etc/ssh --with-privsep-path=/var/lib/sshd \
+  --with-default-path=/usr/bin --with-superuser-path=/usr/sbin:/usr/bin --with-pid-dir=/run
+]
+# real    6m4.339s
+# user    3m44.311s
+# sys     2m42.883s
+
+build=[ make ]
+# real    3m27.013s
+# user    11m48.778s
+# sys     1m23.523s
+
+check=[ make -j1 tests ]
+# real    69m7.124s
+# user    33m27.408s
+# sys     19m46.229s
+
+install=[ make install ]
+# real    0m4.276s
+# user    0m4.600s
+# sys     0m1.776s
+
+post=[ install -v -m755 contrib/ssh-copy-id /usr/bin
+  install -v -m644 contrib/ssh-copy-id.1 /usr/share/man/man1
+  install -v -m755 -d /usr/share/doc/openssh-10.2p1
+  install -v -m644 INSTALL LICENCE OVERVIEW README* /usr/share/doc/openssh-10.2p1
+]
+
+postconfig=[ sed '/#PermitRootLogin/a\PermitRootLogin yes' -i /etc/ssh/sshd_config
+ # echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+ # echo "KbdInteractiveAuthentication yes" >> /etc/ssh/sshd_config
+]
+
+clean=[ cd ../ && rm -rf openssh-10.2p1 ]
+
+# test_sshbuf: 114 tests ok
+# test_sshkey: 84 tests ok
+# test_sshsig: 7 tests ok
+# test_authopt: 146 tests ok
+# test_bitmap: 2 tests ok
+# test_conversion: 1 tests ok
+# test_kex: 332 tests ok
+# test_hostkeys: 18 tests ok
+# test_match: 6 tests ok
+# test_misc: 102 tests ok
+#
+# unit tests passed
+# echo all tests passed
+# all tests passed

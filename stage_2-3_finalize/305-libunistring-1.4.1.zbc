@@ -1,0 +1,42 @@
+pkgdir=[libunistring-1.4.1]
+pkgname=[libunistring]
+pkgver=[1.4.1]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/libunistring/libunistring-1.4.1.tar.xz]
+md5sum=[7419fcbca7c0b29d3b218a09a15cbc76]
+
+extract=[ xtar /sources/libunistring-1.4.1.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/libunistring-1.4.1 ]
+# real    4m28.599s
+# user    2m30.839s
+# sys     1m58.062s
+
+build=[ make ]
+# real    14m38.446s
+# user    19m34.996s
+# sys     8m51.444s
+
+check=[ make check ]
+# real    12m31.228s
+# user    26m44.433s
+# sys     18m45.014s
+
+install=[ make install ]
+# real    0m7.:00s
+# user    0m5.516s
+# sys     0m3.320s
+
+clean=[ cd ../ && rm -rf libunistring-1.4.1 ]
+
+# Testsuite summary for libunistring 1.4.1
+# ============================================================================
+# # TOTAL: 673
+# # PASS:  624
+# # SKIP:  49
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

@@ -1,0 +1,55 @@
+pkgdir=[findutils-4.10.0]
+pkgname=[findutils]
+pkgver=[4.10.0]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/findutils/findutils-4.10.0.tar.xz]
+md5sum=[870cfd71c07d37ebe56f9f4aaf4ad872]
+
+extract=[ xtar /sources/findutils-4.10.0.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --localstatedir=/var/lib/locate ]
+# real    6m49.820s
+# user    3m49.489s
+# sys     2m55.021s
+
+build=[ make ]
+# real    1m49.185s
+# user    4m34.875s
+# sys     0m47.806s
+
+check=[ chown -R tester .
+  su tester -c "PATH=$PATH make check"
+]
+# real    7m53.761s
+# user    12m7.265s
+# sys     6m10.124s
+
+install=[ make install ]
+# real    0m15.784s
+# user    0m10.083s
+# sys     0m7.210s
+
+clean=[ cd ../ && rm -rf findutils-4.10.0 ]
+
+# Testsuite summary for GNU findutils 4.10.0
+# ============================================================================
+# # TOTAL: 362
+# # PASS:  302
+# # SKIP:  60
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0
+# ============================================================================
+# # TOTAL: 23
+# # PASS:  21
+# # SKIP:  2
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0
+# real    5m43.254s
+# user    4m50.321s
+# sys     4m51.982s

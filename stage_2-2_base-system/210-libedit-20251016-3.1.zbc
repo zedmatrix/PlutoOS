@@ -1,0 +1,35 @@
+pkgdir=[libedit-20251016-3.1]
+pkgname=[libedit]
+pkgver=[20251016-3.1]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://thrysoee.dk/editline/libedit-20251016-3.1.tar.gz]
+md5sum=[d580a2ab42aa69d09c237b1e2058914d]
+
+extract=[ xtar /sources/libedit-20251016-3.1.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/libedit-3.1 ]
+# real    1m1.679s
+# user    0m32.284s
+# sys     0m31.448s
+
+build=[ make ]
+# real    1m8.345s
+# user    3m3.752s
+# sys     0m29.536s
+
+install=[ make install ]
+# real    0m3.010s
+# user    0m1.956s
+# sys     0m3.443s
+
+post=[ ln -sfv libedit.so /usr/lib/libreadline.so
+	mkdir -pv /usr/include/readline
+	touch /usr/include/readline/history.h
+	touch /usr/include/readline/tilde.h
+	ln -sfv ../editline/readline.h /usr/include/readline/readline.h
+	ln -sfv libedit.pc /usr/lib/pkgconfig/readline.pc
+]
+
+clean=[ cd ../ && rm -rf libedit-20251016-3.1 ]

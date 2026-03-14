@@ -1,0 +1,53 @@
+pkgdir=[texinfo-7.2]
+pkgname=[texinfo]
+pkgver=[7.2]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/texinfo/texinfo-7.2.tar.xz]
+md5sum=[11939a7624572814912a18e76c8d8972]
+
+extract=[ xtar /sources/texinfo-7.2.tar.xz ]
+
+prepare=[ sed 's/! $output_file eq/$output_file ne/' -i tp/Texinfo/Convert/*.pm
+  ./configure --prefix=/usr
+]
+# real    5m29.823s
+# user    3m9.306s
+# sys     2m32.319s
+
+build=[ make ]
+# real    4m26.402s
+# user    9m17.447s
+# sys     2m15.688s
+
+check=[ make check ]
+# real    4m51.006s
+# user    11m26.603s
+# sys     5m58.215s
+
+install=[ make install ]
+# real    0m32.836s
+# user    0m15.300s
+# sys     0m22.242s
+
+post=[ make TEXMF=/usr/share/texmf install-tex ]
+# real    0m0.801s
+# user    0m0.295s
+# sys     0m0.501s
+
+clean=[ cd ../ && rm -rf texinfo-7.2 ]
+
+# Testsuite summary for GNU Texinfo 7.2
+# ============================================================================
+# # TOTAL: 125
+# # PASS:  81
+# # SKIP:  40
+# # XFAIL: 0
+# # FAIL:  4
+# # XPASS: 0
+# # ERROR: 0
+# FAIL: test_scripts/layout_formatting_fr_icons.sh
+# FAIL: test_scripts/layout_formatting_fr_info.sh
+# FAIL: test_scripts/layout_formatting_fr.sh
+# FAIL: test_scripts/formatting_documentlanguage_cmdline.sh

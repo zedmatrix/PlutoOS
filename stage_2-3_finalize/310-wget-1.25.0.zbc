@@ -1,0 +1,42 @@
+pkgdir=[wget-1.25.0]
+pkgname=[wget]
+pkgver=[1.25.0]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz]
+md5sum=[c70ba58b36f944e8ba1d655ace552881]
+
+extract=[ xtar /sources/wget-1.25.0.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --sysconfdir=/etc --with-ssl=openssl ]
+# real    6m3.857s
+# user    3m27.435s
+# sys     2m34.042s
+
+build=[ make ]
+# real    1m58.006s
+# user    5m39.613s
+# sys     0m44.838s
+
+check=[ make check ]
+# real    1m16.449s
+# user    3m30.862s
+# sys     0m41.610s
+
+install=[ make install ]
+# real    0m10.429s
+# user    0m4.597s
+# sys     0m6.652s
+
+clean=[ cd ../ && rm -rf wget-1.25.0 ]
+
+# Testsuite summary for wget 1.25.0
+# ============================================================================
+# # TOTAL: 88
+# # PASS:  19
+# # SKIP:  0
+# # XFAIL: 0
+# # FAIL:  69
+# # XPASS: 0
+# # ERROR: 0

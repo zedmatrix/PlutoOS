@@ -1,0 +1,28 @@
+pkgdir=[less-691]
+pkgname=[less]
+pkgver=[691]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://www.greenwoodsoftware.com/less/less-691.tar.gz]
+md5sum=[04c3f4620606205b2f17e51642166274]
+
+extract=[ xtar /sources/less-691.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --sysconfdir=/etc ]
+# real    0m45.582s
+# user    0m26.067s
+# sys     0m19.559s
+
+build=[ make ]
+# real    0m33.058s
+# user    1m42.187s
+# sys     0m10.951s
+
+check=[ make check ]
+
+install=[ make install ]
+# real    0m0.284s
+# user    0m0.106s
+# sys     0m0.176s
+
+clean=[ cd ../ && rm -rf less-691 ]

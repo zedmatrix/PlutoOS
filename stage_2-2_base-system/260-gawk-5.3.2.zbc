@@ -1,0 +1,43 @@
+pkgdir=[gawk-5.3.2]
+pkgname=[gawk]
+pkgver=[5.3.2]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/gawk/gawk-5.3.2.tar.xz]
+md5sum=[b7014650c5f45e5d4837c31209dc0037]
+
+extract=[ xtar /sources/gawk-5.3.2.tar.xz ]
+
+prepare=[ sed -i 's/extras//' Makefile.in
+  ./configure --prefix=/usr
+]
+# real    2m42.120s
+# user    1m24.874s
+# sys     1m20.031s
+
+build=[ make ]
+# real    2m48.737s
+# user    7m35.268s
+# sys     0m48.195s
+
+check=[ chown -R tester .
+  su tester -c "PATH=$PATH make check"
+]
+# real    0m57.909s
+# user    1m24.536s
+# sys     0m51.826s
+# 3 TESTS FAILED
+
+install=[ rm -f /usr/bin/gawk-5.3.2
+  make install
+]
+# real    0m16.641s
+# user    0m7.447s
+# sys     0m12.816s
+
+post=[ ln -sv gawk.1 /usr/share/man/man1/awk.1
+  install -vDm644 doc/{awkforai.txt,*.{eps,pdf,jpg}} -t /usr/share/doc/gawk-5.3.2
+]
+
+clean=[ cd ../ && rm -rf gawk-5.3.2 ]

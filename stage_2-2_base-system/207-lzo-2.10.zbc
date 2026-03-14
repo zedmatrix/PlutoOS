@@ -1,0 +1,42 @@
+description: "A data compression library which is suitable for data decompression and compression in real-time."
+pkgdir=[lzo-2.10]
+pkgname=[lzo]
+pkgver=[2.10]
+pkgrel=[1]
+zarchive=[false]
+zdelete=[true]
+
+
+pkgurl=[https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz]
+sha256sum=[c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072]
+md5sum=[39d3f3f9c55c87b1e5d6888e1420f4b5]
+
+extract=[ xtar /sources/lzo-2.10.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --enable-shared --enable-static \
+  --docdir=/usr/share/doc/lzo-2.10
+]
+# real    1m38.537s
+# user    0m52.196s
+# sys     0m49.094s
+
+build=[ make ]
+# real    1m40.045s
+# user    5m2.378s
+# sys     1m1.975s
+
+check=[ make check || true
+  make test || true
+]
+# All checks passed. Type 'make test' for more exhaustive testing.
+# ll tests passed. Now you are ready to install LZO.
+# real    2m7.248s
+# user    1m53.129s
+# sys     0m13.472s
+
+install=[ make install ]
+# real    0m1.676s
+# user    0m1.055s
+# sys     0m1.048s
+
+clean=[ cd ../ && rm -rf lzo-2.10 ]

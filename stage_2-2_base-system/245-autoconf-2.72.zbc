@@ -1,0 +1,39 @@
+pkgdir=[autoconf-2.72]
+pkgname=[autoconf]
+pkgver=[2.72]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz]
+md5sum=[1be79f7106ab6767f18391c5e22be701]
+
+extract=[ xtar /sources/autoconf-2.72.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr ]
+# real    0m6.485s
+# user    0m2.557s
+# sys     0m4.594s
+
+build=[ make ]
+# real    0m4.239s
+# user    0m7.888s
+# sys     0m4.429s
+
+check=[ make check ]
+# real    90m47.556s
+# user    197m39.330s
+# sys     132m59.285s
+
+install=[ make install ]
+# real    0m1.904s
+# user    0m1.350s
+# sys     0m2.381s
+
+clean=[ cd ../ && rm -rf autoconf-2.72 ]
+
+# ## ------------- ##
+# ## Test results. ##
+# ## ------------- ##
+#
+# 549 tests behaved as expected.
+# 60 tests were skipped.

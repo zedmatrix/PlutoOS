@@ -1,0 +1,26 @@
+pkgdir=[xz-5.8.2]
+pkgname=[xz]
+pkgver=[5.8.2]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://github.com//tukaani-project/xz/releases/download/v5.8.2/xz-5.8.2.tar.xz]
+md5sum=[87c8bb8addf7189d3a51f6a5f03163fc]
+
+extract=[ xtar /sources/xz-5.8.2.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/xz-5.8.2 ]
+# real    1m36.147s
+# user    0m48.953s
+# sys     0m51.092s
+
+build=[ make ]
+# real    2m2.430s
+# user    5m27.543s
+# sys     1m21.064s
+
+install=[ make install ]
+# real    0m23.281s
+# user    0m11.845s
+# sys     0m23.967s
+
+clean=[ cd ../ && rm -rf xz-5.8.2 ]

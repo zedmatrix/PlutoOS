@@ -1,0 +1,28 @@
+pkgdir=[gdbm-1.26]
+pkgname=[gdbm]
+pkgver=[1.26]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz]
+md5sum=[aaa600665bc89e2febb3c7bd90679115]
+
+extract=[ xtar /sources/gdbm-1.26.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static --enable-libgdbm-compat ]
+# real    0m58.830s
+# user    0m28.194s
+# sys     0m33.613s
+
+build=[ make ]
+# real    0m46.232s
+# user    1m54.752s
+# sys     0m31.642s
+
+check=[ make check ]
+
+install=[ make install ]
+# real    0m8.368s
+# user    0m3.780s
+# sys     0m5.832s
+
+clean=[ cd ../ && rm -rf gdbm-1.26 ]

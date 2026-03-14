@@ -1,0 +1,21 @@
+pkgdir=[flit_core-3.12.0]
+pkgname=[flit_core]
+pkgver=[3.12.0]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://pypi.org/packages/source/f/flit-core/flit_core-3.12.0.tar.gz]
+md5sum=[c538415c1f27bd69cbbbf3cdd5135d39]
+
+extract=[ xtar /sources/flit_core-3.12.0.tar.gz ]
+
+build=[ pip3 wheel -w dist --no-cache-dir --no-build-isolation --no-deps $PWD ]
+# real    0m9.744s
+# user    0m8.196s
+# sys     0m1.236s
+
+install=[ pip3 install --no-index --find-links dist flit_core ]
+# real    0m6.332s
+# user    0m5.421s
+# sys     0m0.666s
+
+clean=[ cd ../ && rm -rf flit_core-3.12.0 ]

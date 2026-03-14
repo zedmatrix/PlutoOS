@@ -1,0 +1,48 @@
+pkgdir=[inetutils-2.7]
+pkgname=[inetutils]
+pkgver=[2.7]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/inetutils/inetutils-2.7.tar.gz]
+md5sum=[eed294e7b170cbbb0ff86493ef4c1273]
+
+extract=[ xtar /sources/inetutils-2.7.tar.gz ]
+
+preconfig=[ sed -i 's/def HAVE_TERMCAP_TGETENT/ 1/' telnet/telnet.c ]
+
+prepare=[ ./configure --prefix=/usr --bindir=/usr/bin --localstatedir=/var \
+ --disable-logger --disable-whois --disable-rcp --disable-rexec \
+ --disable-rlogin --disable-rsh --disable-servers
+]
+# real    7m55.185s
+# user    4m37.522s
+# sys     3m18.518s
+
+build=[ make ]
+# real    2m8.999s
+# user    5m17.502s
+# sys     0m54.559s
+
+check=[ make check ]
+# real    0m11.478s
+# user    0m9.291s
+# sys     0m8.077s
+
+install=[ make install ]
+# real    0m8.901s
+# user    0m5.682s
+# sys     0m4.402s
+
+post=[ mv -v /usr/{,s}bin/ifconfig ]
+
+clean=[ cd ../ && rm -rf inetutils-2.7 ]
+
+# Testsuite summary for GNU inetutils 2.7
+# ============================================================================
+# # TOTAL: 12
+# # PASS:  11
+# # SKIP:  1
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

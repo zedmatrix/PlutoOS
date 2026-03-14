@@ -1,0 +1,58 @@
+pkgdir=[e2fsprogs-1.47.3]
+pkgname=[e2fsprogs]
+pkgver=[1.47.3]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.gz]
+md5sum=[752e5a3ce19aea060d8a203f2fae9baa]
+
+extract=[ xtar /sources/e2fsprogs-1.47.3.tar.gz ]
+
+prepare=[mcd build
+  ../configure --prefix=/usr --sysconfdir=/etc --enable-elf-shlibs \
+    --disable-libblkid --disable-libuuid --disable-uuidd --disable-fsck
+]
+# real    1m55.114s
+# user    1m1.465s
+# sys     0m55.041s
+
+build=[ cd build && make ]
+# real    4m10.415s
+# user    12m38.461s
+# sys     1m25.047s
+
+check=[ cd build && make check ]
+# real    4m13.176s
+# user    8m19.897s
+# sys     4m10.340s
+
+install=[ cd build
+  make install
+  rm -fv /usr/lib/{libcom_err,libe2p,libext2fs,libss}.a
+]
+# real    0m12.197s
+# user    0m6.145s
+# sys     0m10.191s
+
+post=[ gunzip -v /usr/share/info/libext2fs.info.gz
+  install-info --dir-file=/usr/share/info/dir /usr/share/info/libext2fs.info
+]
+
+postconfig=[ cd build
+  makeinfo -o doc/com_err.info ../lib/et/com_err.texinfo
+  install -v -m644 doc/com_err.info /usr/share/info
+  install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info
+]
+
+clean=[ cd ../../ && rm -rf e2fsprogs-1.47.3 ]
+
+## Test Results:
+# r_move_itable_nostride: resize with flex_bg and stride value set: ok
+# r_move_itable_nostride:  *** took 80 seconds to finish ***
+# r_move_itable_nostride:  consider adding ../../tests/r_move_itable_nostride/is_slow_test
+# r_move_itable_realloc: don't allocate inode table from in-use blocks: ok
+# r_move_itable_realloc:  *** took 84 seconds to finish ***
+# r_move_itable_realloc:  consider adding ../../tests/r_move_itable_realloc/is_slow_test
+# 390 tests succeeded     1 tests failed
+# Tests failed: m_assume_storage_prezeroed

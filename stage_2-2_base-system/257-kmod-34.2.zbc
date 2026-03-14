@@ -1,0 +1,27 @@
+pkgdir=[kmod-34.2]
+pkgname=[kmod]
+pkgver=[34.2]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.2.tar.xz]
+md5sum=[36f2cc483745e81ede3406fa55e1065a]
+
+extract=[ xtar /sources/kmod-34.2.tar.xz ]
+
+prepare=[ meson setup build --prefix=/usr --buildtype=release -D manpages=false ]
+# real    0m25.773s
+# user    0m17.296s
+# sys     0m7.995s
+
+build=[ ninja -C build ]
+# real    0m26.614s
+# user    1m11.122s
+# sys     0m7.832s
+
+install=[ ninja -C build install ]
+# real    0m4.249s
+# user    0m3.388s
+# sys     0m0.762s
+
+clean=[ cd ../ && rm -rf kmod-34.2 ]

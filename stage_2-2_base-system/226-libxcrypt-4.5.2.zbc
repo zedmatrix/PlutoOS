@@ -1,0 +1,44 @@
+pkgdir=[libxcrypt-4.5.2]
+pkgname=[libxcrypt]
+pkgver=[4.5.2]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://github.com/besser82/libxcrypt/releases/download/v4.5.2/libxcrypt-4.5.2.tar.xz]
+md5sum=[25e888919ddcd153a07daa95224fa436]
+
+extract=[ xtar /sources/libxcrypt-4.5.2.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --enable-hashes=strong,glibc --enable-obsolete-api=no \
+  --disable-static --disable-failure-tokens
+]
+# real    1m5.985s
+# user    0m35.048s
+# sys     0m32.819s
+
+build=[ make ]
+# real    0m34.599s
+# user    1m40.396s
+# sys     0m23.489s
+
+check=[ make check ]
+# real    2m4.668s
+# user    5m16.828s
+# sys     2m22.115s
+
+install=[ make install ]
+# real    0m1.963s
+# user    0m1.442s
+# sys     0m1.442s
+
+clean=[ cd ../ && rm -rf libxcrypt-4.5.2 ]
+
+# ============================================================================
+# Testsuite summary for xcrypt 4.5.2
+# ============================================================================
+# # TOTAL: 52
+# # PASS:  38
+# # SKIP:  14
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

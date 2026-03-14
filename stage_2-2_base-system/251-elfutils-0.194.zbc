@@ -1,0 +1,118 @@
+pkgdir=[elfutils-0.194]
+pkgname=[libelf]
+pkgver=[0.194]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://sourceware.org/ftp/elfutils/0.194/elfutils-0.194.tar.bz2]
+md5sum=[1137792ea10e9194637d7344439a5955]
+
+extract=[ xtar /sources/elfutils-0.194.tar.bz2 ]
+
+patch=[ patch -Np1 -i /sources/elfutils-musl-macros.patch ]
+patchmd5=[8794c7c99fd617c21b5d3a3c4b308177]
+
+prepare=[ ./configure --prefix=/usr --disable-debuginfod --enable-libdebuginfod=dummy ]
+# real    1m28.856s
+# user    0m47.957s
+# sys     0m43.328s
+
+build=[ make
+# make -C lib; make -C libelf;
+# real    7m48.618s
+# user    22m53.891s
+# sys     4m4.068s
+]
+
+check=[ make check ]
+
+install=[ make install
+  # make -C libelf install
+  # install -vm644 config/libelf.pc /usr/lib/pkgconfig
+]
+# real    0m8.474s
+# user    0m5.204s
+# sys     0m5.306s
+
+# post=[ rm -v /usr/lib/libelf.a ]
+
+clean=[ cd ../ && rm -rf elfutils-0.194 ]
+
+
+# dwfl-report-offline-memory.c:22:10: fatal error: error.h: No such file or directory
+#    22 | #include <error.h>
+#       |          ^~~~~~~~~
+# compilation terminated.
+# make[3]: *** [Makefile:2808: dwfl-report-offline-memory.o] Error 1
+# make[3]: *** Waiting for unfinished jobs....
+# make[2]: *** [Makefile:5229: check-am] Error 2
+# make[1]: *** [Makefile:5232: check] Error 2
+# make: *** [Makefile:625: check-recursive] Error 1
+#
+# real    0m31.007s
+# user    1m4.453s
+# sys     0m16.526s
+
+# /usr/bin/install -c -m 644 -D profile.sh /usr/etc/profile.d/debuginfod.sh
+# /usr/bin/install -c -m 644 -D profile.csh /usr/etc/profile.d/debuginfod.csh
+#  /usr/bin/mkdir -p '/usr/lib/pkgconfig'
+# /usr/bin/install -c -m 644 -D profile.fish /usr/share/fish/vendor_conf.d/debuginfod.fish
+# /usr/bin/install -c -m 644 libelf.pc libdw.pc libdebuginfod.pc '/usr/lib/pkgconfig'
+# /usr/bin/install -c -m 644  libelf.a '/usr/lib'
+#  /usr/bin/install -c -m 644 libelf.h gelf.h nlist.h '/usr/include'
+#  /usr/bin/install -c -m 644 elf-knowledge.h '/usr/include/elfutils'
+#
+# /bin/sh /zbuild/elfutils-0.194/config/install-sh -d /usr/lib
+# /usr/bin/install -c libelf.so /usr/lib/libelf-0.194.so
+# ln -fs libelf-0.194.so /usr/lib/libelf.so.1
+# ln -fs libelf.so.1 /usr/lib/libelf.so
+# /usr/bin/install -c -m 644 libdwelf.h '/usr/include/elfutils'
+# /usr/bin/install -c -m 644 libdwfl.h '/usr/include/elfutils'
+# /usr/bin/install -c -m 644 libdwfl_stacktrace.h '/usr/include/elfutils'
+# /usr/bin/install -c -m 644  libdw.a '/usr/lib'
+#  /usr/bin/install -c -m 644 dwarf.h '/usr/include'
+#  /usr/bin/install -c -m 644 libdw.h known-dwarf.h '/usr/include/elfutils'
+#
+# /bin/sh /zbuild/elfutils-0.194/config/install-sh -d /usr/lib
+# /usr/bin/install -c libdw.so /usr/lib/libdw-0.194.so
+# ln -fs libdw-0.194.so /usr/lib/libdw.so.1
+# ln -fs libdw.so.1 /usr/lib/libdw.so
+#
+#  /usr/bin/mkdir -p '/usr/lib'
+#  /usr/bin/mkdir -p '/usr/include/elfutils'
+#  /usr/bin/install -c -m 644  libasm.a '/usr/lib'
+#  /usr/bin/install -c -m 644 libasm.h '/usr/include/elfutils'
+#
+# /bin/sh /zbuild/elfutils-0.194/config/install-sh -d /usr/lib
+# /usr/bin/install -c libasm.so /usr/lib/libasm-0.194.so
+# ln -fs libasm-0.194.so /usr/lib/libasm.so.1
+# ln -fs libasm.so.1 /usr/lib/libasm.so
+# /usr/bin/install -c -m 644 debuginfod.h '/usr/include/elfutils'
+# /usr/bin/install -c debuginfod-find '/usr/bin'
+# /bin/sh /zbuild/elfutils-0.194/config/install-sh -d /usr/lib
+# /usr/bin/install -c libdebuginfod.so.1 /usr/lib/libdebuginfod-0.194.so
+# ln -fs libdebuginfod-0.194.so /usr/lib/libdebuginfod.so.1
+# ln -fs libdebuginfod-0.194.so /usr/lib/libdebuginfod.so
+# /usr/bin/install -c make-debug-archive '/usr/bin/./eu-make-debug-archive'
+# /usr/bin/install -c readelf '/usr/bin/./eu-readelf'
+# /usr/bin/install -c nm '/usr/bin/./eu-nm'
+# /usr/bin/install -c size '/usr/bin/./eu-size'
+# /usr/bin/install -c strip '/usr/bin/./eu-strip'
+# /usr/bin/install -c elflint '/usr/bin/./eu-elflint'
+# /usr/bin/install -c findtextrel '/usr/bin/./eu-findtextrel'
+# /usr/bin/install -c addr2line '/usr/bin/./eu-addr2line'
+# /usr/bin/install -c elfcmp '/usr/bin/./eu-elfcmp'
+# /usr/bin/install -c objdump '/usr/bin/./eu-objdump'
+# /usr/bin/install -c ranlib '/usr/bin/./eu-ranlib'
+# /usr/bin/install -c strings '/usr/bin/./eu-strings'
+# /usr/bin/install -c ar '/usr/bin/./eu-ar'
+# /usr/bin/install -c unstrip '/usr/bin/./eu-unstrip'
+# /usr/bin/install -c stack '/usr/bin/./eu-stack'
+# /usr/bin/install -c elfcompress '/usr/bin/./eu-elfcompress'
+# /usr/bin/install -c elfclassify '/usr/bin/./eu-elfclassify'
+# /usr/bin/install -c srcfiles '/usr/bin/./eu-srcfiles'
+#
+# /usr/bin/mkdir -p '/usr/share/man/man1'
+# /usr/bin/mkdir -p '/usr/share/man/man3'
+# /usr/bin/mkdir -p '/usr/share/man/man8'
+# /usr/bin/mkdir -p '/usr/share/man/man7'

@@ -1,0 +1,41 @@
+pkgdir=[ncurses-6.6]
+pkgname=[ncurses]
+pkgver=[6.6]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://invisible-mirror.net/archives/ncurses/ncurses-6.6.tar.gz]
+md5sum=[dd45bf6854430af403452a7a6a40652c]
+
+extract=[ xtar /sources/ncurses-6.6.tar.gz ]
+prepare=[ ./configure --prefix=/usr --mandir=/usr/share/man --with-shared --without-debug \
+ --without-normal --with-cxx-shared --enable-pc-files --with-pkg-config-libdir=/usr/lib/pkgconfig
+]
+# real    2m43.667s
+# user    1m29.860s
+# sys     1m16.154s
+
+build=[ make ]
+# real    3m52.090s
+# user    11m3.028s
+# sys     1m29.278s
+
+install=[ make DESTDIR=$PWD/dest install
+  sed -e 's/^#if.*XOPEN.*$/#if 1/' -i dest/usr/include/curses.h
+  cp --remove-destination -av dest/* /
+]
+# real    1m0.866s
+# user    0m26.830s
+# sys     0m43.779s
+
+
+post=[ for lib in ncurses form panel menu ; do
+  ln -sfv lib${lib}w.so /usr/lib/lib${lib}.so
+  ln -sfv ${lib}w.pc /usr/lib/pkgconfig/${lib}.pc
+done
+]
+
+postconfig=[ ln -sfv libncursesw.so /usr/lib/libcurses.so
+  cp -v -R doc -T /usr/share/doc/ncurses-6.6
+]
+
+clean=[ cd ../ && rm -rf ncurses-6.6 ]

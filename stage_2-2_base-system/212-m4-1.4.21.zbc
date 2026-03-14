@@ -1,0 +1,22 @@
+pkgdir=[m4-1.4.21]
+pkgname=[m4]
+pkgver=[1.4.21]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/m4/m4-1.4.21.tar.xz]
+md5sum=[8051eef7239b2f187791f2ab0034d6b7]
+
+extract=[ xtar /sources/m4-1.4.21.tar.xz ]
+
+build=[ ./configure --prefix=/usr; make; ]
+# real    7m41.247s
+# user    7m45.631s
+# sys     3m17.829s
+
+install=[ make install ]
+# real    0m5.059s
+# user    0m3.207s
+# sys     0m2.234s
+
+clean=[ cd ../ && rm -rf m4-1.4.21 ]

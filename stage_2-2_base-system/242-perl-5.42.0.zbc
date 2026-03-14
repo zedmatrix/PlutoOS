@@ -1,0 +1,50 @@
+pkgdir=[perl-5.42.0]
+pkgname=[perl]
+pkgver=[5.42.0]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.cpan.org/src/5.0/perl-5.42.0.tar.xz]
+md5sum=[7a6950a9f12d01eb96a9d2ed2f4e0072]
+
+extract=[ xtar /sources/perl-5.42.0.tar.xz ]
+
+prepare=[ export BUILD_ZLIB=False && export BUILD_BZIP2=0
+  sh Configure -des -D prefix=/usr -D vendorprefix=/usr -D useshrplib -D usethreads \
+  -D privlib=/usr/lib/perl5/5.42/core_perl -D archlib=/usr/lib/perl5/5.42/core_perl \
+  -D sitelib=/usr/lib/perl5/5.42/site_perl -D sitearch=/usr/lib/perl5/5.42/site_perl \
+  -D vendorlib=/usr/lib/perl5/5.42/vendor_perl -D vendorarch=/usr/lib/perl5/5.42/vendor_perl \
+  -D man1dir=/usr/share/man/man1 -D man3dir=/usr/share/man/man3 \
+  -D pager="/usr/bin/less -isR" -A ccflags='-D_GNU_SOURCE=1'
+
+]
+# real    3m50.728s
+# user    3m9.057s
+# sys     2m3.626s
+
+build=[ make ]
+# real    17m49.668s
+# user    56m51.122s
+# sys     4m27.023s
+
+check=[ TEST_JOBS=$(nproc) make test_harness ]
+# real    49m10.211s
+# user    146m45.702s
+# sys     19m43.151s
+
+install=[ make install
+  unset BUILD_ZLIB BUILD_BZIP2
+]
+# real    5m40.552s
+# user    6m44.352s
+# sys     0m36.025s
+
+clean=[ cd ../ && rm -rf perl-5.42.0 ]
+
+# Test Summary Report
+# -------------------
+# run/todo.t                                                         (Wstat: 0 Tests: 6 Failed: 0)
+#   TODO passed:   3-4
+# Files=2915, Tests=1350796, 2903 wallclock secs (1120.46 usr 256.14 sys + 7560.57 cusr 893.74 csys = 9830.91 CPU)
+# Result: PASS
+# Finished test run at Mon Mar  9 02:14:01 2026.

@@ -7,6 +7,21 @@ zarchive=[false]
 pkgurl=[https://ftp.gnu.org/gnu/texinfo/texinfo-7.2.tar.xz]
 md5sum=[11939a7624572814912a18e76c8d8972]
 
-build=[./configure --prefix=/usr && make]
+extract=[ xtar /sources/texinfo-7.2.tar.xz ]
 
-install=[make install]
+prepare=[ ./configure --prefix=/usr ]
+# real    4m51.120s
+# user    2m55.712s
+# sys     2m6.563s
+
+build=[ make ]
+# real    4m25.133s
+# user    9m9.712s
+# sys     2m24.124s
+
+install=[ make install ]
+# real    0m28.710s
+# user    0m13.968s
+# sys     0m19.017s
+
+clean=[ cd ../ && rm -rf texinfo-7.2 ]

@@ -1,0 +1,43 @@
+pkgdir=[libtasn1-4.21.0]
+pkgname=[libtasn1]
+pkgver=[4.21.0]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.21.0.tar.gz]
+md5sum=[2ee1d9f3aa66f1e308c46a283aa9a8c2]
+
+extract=[ xtar /sources/libtasn1-4.21.0.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static ]
+# real    2m44.309s
+# user    1m27.814s
+# sys     1m18.620s
+
+build=[ make ]
+# real    1m13.889s
+# user    2m39.381s
+# sys     0m36.596s
+
+check=[ make check ]
+# real    0m44.991s
+# user    1m23.312s
+# sys     0m56.810s
+
+install=[ make install ]
+# real    0m5.800s
+# user    0m3.145s
+# sys     0m3.923s
+
+clean=[ cd ../ && rm -rf libtasn1-4.21.0 ]
+
+
+# Testsuite summary for GNU Libtasn1 4.21.0
+# ============================================================================
+# # TOTAL: 31
+# # PASS:  31
+# # SKIP:  0
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

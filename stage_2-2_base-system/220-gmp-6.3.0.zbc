@@ -1,0 +1,34 @@
+pkgdir=[gmp-6.3.0]
+pkgname=[gmp]
+pkgver=[6.3.0]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz]
+md5sum=[956dc04e864001a9c22429f761f2c283]
+
+extract=[ xtar /sources/gmp-6.3.0.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --enable-cxx --disable-static --docdir=/usr/share/doc/gmp-6.3.0 ]
+# real    3m43.897s
+# user    1m56.794s
+# sys     1m54.872s
+
+build=[ make; make html; ]
+# real    5m21.012s
+# user    12m40.163s
+# sys     3m45.995s
+
+check=[ make check 2>&1 | tee gmp-check-log ]
+# real    6m46.632s
+# user    19m19.368s
+# sys     4m0.315s
+
+install=[ make install; make install-html; ]
+# real    0m6.951s
+# user    0m3.653s
+# sys     0m4.063s
+
+post=[ awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log ]
+# 199
+
+clean=[ cd ../ && rm -rf gmp-6.3.0 ]

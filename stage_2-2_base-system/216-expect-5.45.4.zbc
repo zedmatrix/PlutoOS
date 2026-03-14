@@ -1,0 +1,52 @@
+pkgdir=[expect-5.45.4]
+pkgname=[expect]
+pkgver=[5.45.4]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz]
+md5sum=[00fce8de158422f5ccd2666512329bd2]
+
+patchurl=[https://www.linuxfromscratch.org/patches/downloads/expect/expect-5.45.4-gcc15-1.patch]
+patchmd5=[0ca4d6bb8d572fbcdb13cb36cd34833e]
+
+test=[ python3 -c 'from pty import spawn; spawn(["echo", "ok"])' ]
+
+extract=[ xtar /sources/expect5.45.4.tar.gz ]
+
+preconfig=[ patch -Np1 -i /sources/expect-5.45.4-gcc15-1.patch ]
+
+prepare=[ mv -v tclconfig/config.guess{,.old}
+  mv -v tclconfig/config.sub{,.old}
+
+  tar -xf /sources/automake-1.18.1.tar.xz --strip-components=2 -C tclconfig \
+    automake-1.18.1/lib/config.guess \
+    automake-1.18.1/lib/config.sub
+
+  ./configure --prefix=/usr --with-tcl=/usr/lib --enable-shared \
+  --disable-rpath --mandir=/usr/share/man --with-tclinclude=/usr/include
+]
+# real    1m10.797s
+# user    0m40.666s
+# sys     0m34.508s
+
+build=[ make ]
+# real    0m21.613s
+# user    1m4.689s
+# sys     0m7.082s
+
+check=[ make test ]
+# all.tcl:        Total   29      Passed  29      Skipped 0       Failed  0
+# Sourced 0 Test Files.
+#
+# real    0m14.646s
+# user    0m0.723s
+# sys     0m0.785s
+
+install=[ make install ]
+# real    0m1.469s
+# user    0m1.368s
+# sys     0m1.703s
+
+post=[ ln -svf expect5.45.4/libexpect5.45.4.so /usr/lib ]
+
+clean=[ cd ../ && rm -rf expect5.45.4 ]

@@ -1,0 +1,46 @@
+pkgdir=[procps-ng-4.0.5]
+pkgname=[procps-ng]
+pkgver=[4.0.5]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz]
+md5sum=[90803e64f51f192f3325d25c3335d057]
+
+extract=[ xtar /sources/procps-ng-4.0.5.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/procps-ng-4.0.5 \
+  --disable-static --disable-kill --enable-watch8bit --with-systemd
+]
+# real    1m32.933s
+# user    0m48.081s
+# sys     0m46.931s
+
+build=[ make ]
+# real    1m33.842s
+# user    3m53.003s
+# sys     0m45.194s
+
+check=[ chown -R tester .
+  su tester -c "PATH=$PATH make check"
+]
+# real    0m23.750s
+# user    0m32.956s
+# sys     0m37.276s
+
+install=[ make install ]
+# real    0m11.211s
+# user    0m6.942s
+# sys     0m12.796s
+
+clean=[ cd ../ && rm -rf procps-ng-4.0.5 ]
+
+# Testsuite summary for procps-ng 4.0.5
+# ============================================================================
+# # TOTAL: 8
+# # PASS:  8
+# # SKIP:  0
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

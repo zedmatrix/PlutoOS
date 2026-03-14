@@ -1,0 +1,48 @@
+pkgdir=[sed-4.9]
+pkgname=[sed]
+pkgver=[4.9]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz]
+md5sum=[6aac9b2dbafcd5b7a67a8a9bcb8036c3]
+
+extract=[ xtar /sources/sed-4.9.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr ]
+# real    4m7.952s
+# user    2m16.956s
+# sys     1m45.628s
+
+build=[ make; make html; ]
+# real    1m13.804s
+# user    2m31.322s
+# sys     0m23.987s
+
+check=[ chown -R tester .
+	su tester -c "PATH=$PATH make check"
+	chown -R root .
+]
+# real    3m40.746s
+# user    5m46.347s
+# sys     2m28.638s
+
+install=[ make install ]
+# real    0m4.476s
+# user    0m3.098s
+# sys     0m1.843s
+
+post=[ install -d -m755 /usr/share/doc/sed-4.9
+	install -m644 doc/sed.html /usr/share/doc/sed-4.9
+]
+
+clean=[ cd ../ && rm -rf sed-4.9 ]
+
+# Testsuite summary for GNU sed 4.9
+# ============================================================================
+# # TOTAL: 192
+# # PASS:  163
+# # SKIP:  29
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

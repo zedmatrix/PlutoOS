@@ -1,0 +1,72 @@
+pkgdir=[musl-1.2.5-temp]
+pkgname=[musl]
+pkgver=[1.2.5]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://musl.libc.org/releases/musl-1.2.5.tar.gz]
+md5sum=[ac5cfde7718d0547e224247ccfe59f18]
+
+extract=[ xtar $LFS/sources/musl-1.2.5.tar.gz ]
+
+preconfig=[ patch -Np1 -i /sources/musl-1.2.5-rpmalloc.patch
+    patch -Np1 -i /sources/musl-1.2.5-iconv-fix.patch
+]
+
+prepare=[ ./configure --prefix=/usr --with-malloc=rpmalloc
+]
+# real    0m14.783s
+# user    0m8.725s
+# sys     0m5.819s
+
+build=[ make ]
+# real    3m10.320s
+# user    9m18.110s
+# sys     2m26.319s
+
+install=[ make install ]
+# real    0m0.545s
+# user    0m0.779s
+# sys     0m0.699s
+
+post=[ cat > /etc/nsswitch.conf << "EOF"
+# Begin /etc/nsswitch.conf
+
+passwd: files
+group: files
+shadow: files
+
+hosts: files dns
+networks: files
+
+protocols: files
+services: files
+ethers: files
+rpc: files
+
+# End /etc/nsswitch.conf
+EOF
+
+cat > /etc/ld-musl-aarch64.path << "EOF"
+# Begin /etc/ld.so.conf
+/usr/lib
+/usr/local/lib
+/opt/lib
+
+EOF
+cat > /usr/sbin/ldconfig << "EOF"
+#!/bin/sh
+# musl does not use ldconfig - stub for compatibility
+exit 0
+EOF
+chmod +x /usr/sbin/ldconfig
+
+]
+#   Install a mock error.h for glibc compatibility
+postconfig=[ ln -sfv ../lib/ld-musl-aarch64.so.1 /usr/bin/ldd
+    cp -v musl_usr-include-error.h /usr/include/error.h
+]
+##  [Requesting program interpreter: /lib/ld-musl-aarch64.so.1]
+
+clean=[ cd ../ && rm -rf musl-1.2.5 ]
+

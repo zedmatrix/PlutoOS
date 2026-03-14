@@ -1,0 +1,41 @@
+pkgdir=[make-4.4.1]
+pkgname=[make]
+pkgver=[4.4.1]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz]
+md5sum=[c8469a3713cbbe04d955d4ae4be23eeb]
+
+extract=[ xtar /sources/make-4.4.1.tar.gz ]
+
+prepare=[ patch -Np1 -i /sources/make-4.4.1-gcc15.patch
+  ./configure --prefix=/usr
+]
+# real    1m35.438s
+# user    0m51.309s
+# sys     0m44.754s
+
+build=[ make ]
+# real    0m36.672s
+# user    1m55.018s
+# sys     0m9.581s
+
+check=[ chown -R tester .
+  su tester -c "PATH=$PATH make check"
+]
+# real    2m11.079s
+# user    0m31.865s
+# sys     0m49.821s
+
+install=[ make install ]
+# real    0m3.741s
+# user    0m1.563s
+# sys     0m2.806s
+
+clean=[ cd ../ && rm -rf make-4.4.1 ]
+
+# 1442 Tests in 134 Categories Complete ... No Failures :-)
+# ===============================================================================
+#  Regression PASSED: GNU Make 4.4.1 (aarch64-unknown-linux-musl) built with gcc
+# ===============================================================================

@@ -1,0 +1,31 @@
+pkgdir=[flex-2.6.4]
+pkgname=[flex]
+pkgver=[2.6.4]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz]
+md5sum=[2882e3179748cc9f9c23ec593d6adc8d]
+
+extract=[ xtar /sources/flex-2.6.4.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/flex-2.6.4 --disable-static ]
+# real    1m13.661s
+# user    0m36.587s
+# sys     0m41.363s
+
+build=[ make ]
+# real    1m11.002s
+# user    2m54.281s
+# sys     0m16.979s
+
+install=[ make install ]
+# real    0m2.637s
+# user    0m1.621s
+# sys     0m1.614s
+
+post=[ ln -sv flex /usr/bin/lex
+  ln -sv flex.1 /usr/share/man/man1/lex.1
+]
+
+clean=[ cd ../ && rm -rf flex-2.6.4 ]

@@ -1,0 +1,54 @@
+pkgdir=[nano-8.7.1]
+pkgname=[nano]
+pkgver=[8.7.1]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.nano-editor.org/dist/v8/nano-8.7.1.tar.xz]
+md5sum=[d873085c342e3670d108c08a0c3ebe2f]
+
+extract=[ xtar /sources/nano-8.7.1.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --sysconfdir=/etc --enable-utf8 \
+  --docdir=/usr/share/doc/nano-8.7.1
+]
+# real    4m13.733s
+# user    2m28.112s
+# sys     1m44.135s
+
+build=[ make ]
+# real    1m38.969s
+# user    3m55.508s
+# sys     0m30.423s
+
+install=[ make install ]
+# real    0m6.898s
+# user    0m3.637s
+# sys     0m4.290s
+
+post=[ install -v -m644 doc/{nano.html,sample.nanorc} /usr/share/doc/nano-8.7.1 ]
+
+postconfig=[ cat > /etc/nanorc << "EOF"
+set autoindent
+# set boldtext
+set constantshow
+set fill 72
+set historylog
+set indicator
+set multibuffer
+set positionlog
+set quickblank
+set regexp
+# set softwrap
+set tabsize 4
+
+include /usr/share/nano/sh.nanorc
+include /usr/share/nano/yaml.nanorc
+include /usr/share/nano/xml.nanorc
+include /usr/share/nano/json.nanorc
+include /usr/share/nano/markdown.nanorc
+include /usr/share/nano/python.nanorc
+EOF
+]
+
+clean=[ cd ../ && rm -rf nano-8.7.1 ]

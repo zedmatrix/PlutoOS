@@ -1,0 +1,54 @@
+pkgdir=[binutils-2.45]
+pkgname=[binutils]
+pkgver=[2.45]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://sourceware.org/pub/binutils/releases/binutils-2.45.tar.xz]
+md5sum=[dee5b4267e0305a99a3c9d6131f45759]
+
+extract=[ xtar /sources/binutils-2.45.tar.xz ]
+
+prepare=[ mcd build && ../configure --prefix=/usr --sysconfdir=/etc \
+ --enable-ld=default --enable-plugins --enable-shared --disable-werror --enable-64-bit-bfd \
+ --enable-new-dtags --with-system-zlib --enable-default-hash-style=gnu
+]
+# real    0m28.618s
+# user    0m15.878s
+# sys     0m16.230s
+
+build=[ cd build && make tooldir=/usr ]
+# real    21m34.998s
+# user    56m33.395s
+# sys     14m26.126s
+
+check=[ cd build
+  make -k check
+  grep '^FAIL:' $(find -name '*.log') || true
+]
+# real    36m4.907s
+# user    27m22.378s
+# sys     31m26.187s
+
+install=[ cd build && make tooldir=/usr install ]
+# real    0m30.719s
+# user    0m27.633s
+# sys     0m39.374s
+
+post=[ rm -rfv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a /usr/share/doc/gprofng/ ]
+
+clean=[ cd ../../ && rm -rf binutils-2.45 ]
+
+# ./ld/ld.log:FAIL: preinit array
+# ./ld/ld.log:FAIL: PIE preinit array
+# ./ld/ld.log:FAIL: Static PIE preinit array
+# ./ld/ld.log:FAIL: Static PIE init array
+# ./ld/ld.log:FAIL: Static PIE fini array
+# ./ld/ld.log:FAIL: Static PIE init array mixed
+# ./ld/ld.log:FAIL: Static PIE PR ld/14525
+# ./ld/ld.log:FAIL: static preinit array
+# ./ld/ld.log:FAIL: Run with libpr19553c.so
+# ./ld/ld.log:FAIL: Run pr2404
+# ./ld/ld.log:FAIL: Run pr2404n
+# ./ld/ld.log:FAIL: Run pr2404 with PIE
+# ./ld/ld.log:FAIL: Run pr2404 with PIE (-z now)
+# ./ld/ld.log:FAIL: vers16

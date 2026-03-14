@@ -1,0 +1,35 @@
+pkgdir=[libffi-3.5.2]
+pkgname=[libffi]
+pkgver=[3.5.2]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz]
+md5sum=[92af9efad4ba398995abf44835c5d9e9]
+
+extract=[ xtar /sources/libffi-3.5.2.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static --with-gcc-arch=native ]
+# real    1m2.735s
+# user    0m28.984s
+# sys     0m37.183s
+
+build=[ make ]
+# real    0m17.135s
+# user    0m24.410s
+# sys     0m9.347s
+
+check=[ make check ]
+# real    33m26.957s
+# user    28m23.677s
+# sys     4m40.696s
+
+install=[ make install ]
+# real    0m3.304s
+# user    0m1.661s
+# sys     0m2.164s
+
+clean=[ cd ../ && rm -rf libffi-3.5.2 ]
+
+# === libffi Summary ===
+#
+# # of expected passes            1658

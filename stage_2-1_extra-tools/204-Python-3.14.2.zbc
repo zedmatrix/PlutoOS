@@ -1,0 +1,30 @@
+pkgdir=[Python-3.14.2]
+pkgname=[Python]
+pkgver=[3.14.2]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.python.org/ftp/python/3.14.2/Python-3.14.2.tar.xz]
+md5sum=[19a31b2838db3b53f9f2db8782bf8773]
+
+extract=[ xtar /sources/Python-3.14.2.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --enable-shared --without-ensurepip \
+  --without-static-libpython --disable-test-modules
+]
+# real    4m49.530s
+# user    2m47.491s
+# sys     2m1.117s
+
+build=[ make PROFILE_TASK="-m test --pgo --ignore 'test.test_re.ReTests.test_locale_caching' --ignore 'test.test_re.ReTests.test_locale_compiled'" ]
+# real    15m29.710s
+# user    55m11.118s
+# sys     3m20.551s
+# Checked 114 modules (36 built-in, 51 shared, 1 n/a on linux-aarch64, 15 disabled, 11 missing, 0 failed on import)
+
+install=[ make install ]
+# real    1m14.814s
+# user    0m24.985s
+# sys     0m21.743s
+
+clean=[ cd ../ && rm -rf Python-3.14.2 ]

@@ -5,6 +5,7 @@ pkgrel=[1]
 zarchive=[false]
 
 pkgurl=[https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.127.tar.xz]
+sha256=[a7cd9c97b4f0b31cc030bcdc60abe5434fffb2556e293f7438ce7909dff8c9fe]
 md5sum=[6d97902979bdb0b4658693cb80d38b27]
 
 extract=[ xtar $LFS/sources/linux-6.6.127.tar.xz ]

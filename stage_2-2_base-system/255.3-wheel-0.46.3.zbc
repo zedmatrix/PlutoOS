@@ -1,0 +1,21 @@
+pkgdir=[wheel-0.46.3]
+pkgname=[wheel]
+pkgver=[0.46.3]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://pypi.org/packages/source/w/wheel/wheel-0.46.3.tar.gz]
+md5sum=[61fb0c9633fe7492933a8f338db23508]
+
+extract=[ xtar /sources/wheel-0.46.3.tar.gz ]
+
+build=[ pip3 wheel -w dist --no-cache-dir --no-build-isolation --no-deps $PWD ]
+# real    0m8.445s
+# user    0m6.876s
+# sys     0m1.294s
+
+install=[ pip3 install --no-index --find-links dist wheel ]
+# real    0m5.922s
+# user    0m4.966s
+# sys     0m0.793s
+
+clean=[ cd ../ && rm -rf wheel-0.46.3 ]

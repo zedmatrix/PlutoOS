@@ -1,13 +1,15 @@
-pkgdir=[p11-kit-0.25.5]
+pkgdir=[p11-kit-0.26.1]
 pkgname=[p11-kit]
-pkgver=[0.25.5]
+pkgver=[0.26.1]
 pkgrel=[1]
 zarchive=[false]
 
-pkgurl=[https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz]
-md5sum=[e9c5675508fcd8be54aa4c8cb8e794fc]
+pkgurl=[https://github.com/p11-glue/p11-kit/releases/download/0.26.1/p11-kit-0.26.1.tar.xz]
+md5sum=[c5ef8b487869233ba58973a91dcfdf26]
 
-preconfig=[sed '20,$ d' -i trust/trust-extract-compat &&
+extract=[ xtar /sources/p11-kit-0.26.1.tar.xz ]
+
+preconfig=[ sed '20,$ d' -i trust/trust-extract-compat
   cat >> trust/trust-extract-compat << "EOF"
 # Copy existing anchor modifications to /etc/ssl/local
 /usr/libexec/make-ca/copy-trust-modifications
@@ -17,10 +19,29 @@ preconfig=[sed '20,$ d' -i trust/trust-extract-compat &&
 EOF
 ]
 
-prepare=[meson setup p11-build --prefix=/usr --buildtype=release -D trust_paths=/etc/pki/anchors]
+prepare=[ meson setup p11-build --prefix=/usr --buildtype=release -D trust_paths=/etc/pki/anchors ]
+# real    0m40.475s
+# user    0m28.298s
+# sys     0m11.336s
 
-build=[meson compile -C p11-build]
+build=[ ninja -C p11-build ]
+# real    8m58.869s
+# user    27m3.356s
+# sys     1m58.353s
 
-install=[meson install -C p11-build]
+check=[ ninja -C p11-build test ]
+# Ok:                67
+# Fail:              0
+# Full log written to /zbuild/p11-kit-0.26.1/p11-build/meson-logs/testlog.txt
+# real    0m19.553s
+# user    0m17.180s
+# sys     0m20.023s
 
-post=[ln -sfv /usr/libexec/p11-kit/trust-extract-compat /usr/bin/update-ca-certificates]
+install=[ ninja -C p11-build install ]
+# real    0m4.883s
+# user    0m3.850s
+# sys     0m0.929s
+
+post=[ ln -sfv /usr/libexec/p11-kit/trust-extract-compat /usr/bin/update-ca-certificates ]
+
+clean=[ cd ../ && rm -rf p11-kit-0.26.1 ]

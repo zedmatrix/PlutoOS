@@ -1,0 +1,34 @@
+pkgdir=[mpc-1.3.1]
+pkgname=[mpc]
+pkgver=[1.3.1]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz]
+md5sum=[5c9bc658c9fd0f940e8e3e0f09530c62]
+
+extract=[ xtar /sources/mpc-1.3.1.tar.gz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/mpc-1.3.1 ]
+# real    0m50.024s
+# user    0m24.594s
+# sys     0m27.833s
+
+build=[ make; make html; ]
+# real    0m57.521s
+# user    2m3.501s
+# sys     0m44.098s
+
+check=[ make check 2>&1 | tee mpc-check-log ]
+# real    3m11.734s
+# user    9m47.237s
+# sys     1m47.861s
+
+install=[ make install; make install-html; ]
+# real    0m2.934s
+# user    0m1.343s
+# sys     0m1.710s
+
+post=[ awk '/# PASS:/{total+=$3} ; END{print total}' mpc-check-log ]
+# 74
+
+clean=[ cd ../ && rm -rf mpc-1.3.1 ]

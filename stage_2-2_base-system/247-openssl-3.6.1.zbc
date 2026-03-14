@@ -1,0 +1,50 @@
+pkgdir=[openssl-3.6.1]
+pkgname=[openssl]
+pkgver=[3.6.1]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz]
+md5sum=[589777dc85ebbfeca70161c0c384d572]
+
+extract=[ xtar /sources/openssl-3.6.1.tar.gz ]
+
+prepare=[ ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib shared zlib-dynamic ]
+# real    2m27.196s
+# user    2m20.357s
+# sys     0m4.891s
+
+build=[ make ]
+# real    35m12.676s
+# user    119m28.582s
+# sys     16m24.796s
+
+check=[ HARNESS_JOBS=$(nproc) make test ]
+# real    24m5.203s
+# user    65m50.826s
+# sys     16m40.866s
+
+install=[ make MANSUFFIX=ssl install ]
+# real    10m23.806s
+# user    25m31.319s
+# sys     3m24.991s
+
+post=[ mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.6.1
+  cp -vfr doc/* /usr/share/doc/openssl-3.6.1
+]
+
+clean=[ cd ../ && rm -rf openssl-3.6.1 ]
+
+# Test Summary Report
+# -------------------
+# 02-test_mem_alloc.t                    (Wstat: 256 (exited 1) Tests: 1 Failed: 1)
+#   Failed test:  1
+#   Non-zero exit status: 1
+# 02-test_mem_alloc_custom_fns.t         (Wstat: 256 (exited 1) Tests: 1 Failed: 1)
+#   Failed test:  1
+#   Non-zero exit status: 1
+# 30-test_afalg.t                        (Wstat: 256 (exited 1) Tests: 1 Failed: 1)
+#   Failed test:  1
+#   Non-zero exit status: 1
+# Files=350, Tests=4541, 1422 wallclock secs (128.83 usr 18.57 sys + 3802.21 cusr 979.72 csys = 4929.33 CPU)
+# Result: FAIL

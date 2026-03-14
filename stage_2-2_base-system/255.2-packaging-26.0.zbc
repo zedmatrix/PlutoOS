@@ -1,0 +1,21 @@
+pkgdir=[packaging-26.0]
+pkgname=[packaging]
+pkgver=[26.0]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://files.pythonhosted.org/packages/source/p/packaging/packaging-26.0.tar.gz]
+md5sum=[2cbdbb5754f038736c3c361826c6872a]
+
+extract=[ xtar /sources/packaging-26.0.tar.gz ]
+
+build=[ pip3 wheel -w dist --no-cache-dir --no-build-isolation --no-deps $PWD ]
+# real    0m8.456s
+# user    0m7.198s
+# sys     0m1.024s
+
+install=[ pip3 install --no-index --find-links dist packaging ]
+# real    0m6.958s
+# user    0m5.957s
+# sys     0m0.808s
+
+clean=[ cd ../ && rm -rf packaging-26.0 ]

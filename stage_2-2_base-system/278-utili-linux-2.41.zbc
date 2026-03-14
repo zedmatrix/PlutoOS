@@ -1,0 +1,44 @@
+pkgdir=[util-linux-2.41.3]
+pkgname=[util-linux]
+pkgver=[2.41.3]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.xz]
+md5sum=[e666a34b03554c18a1073347b16661ce]
+
+extract=[ xtar /sources/util-linux-2.41.3.tar.xz ]
+
+prepare=[ ./configure --bindir=/usr/bin --libdir=/usr/lib --runstatedir=/run --sbindir=/usr/sbin \
+  --disable-chfn-chsh --disable-login --disable-nologin --disable-su --disable-setpriv --disable-runuser \
+  --disable-pylibmount --disable-liblastlog2 --disable-static --without-python \
+  ADJTIME_PATH=/var/lib/hwclock/adjtime --docdir=/usr/share/doc/util-linux-2.41.3
+]
+# real    3m38.418s
+# user    1m56.145s
+# sys     1m45.679s
+
+build=[ make ]
+# real    7m25.952s
+# user    23m3.882s
+# sys     4m58.817s
+
+check=[ touch /etc/fstab
+  chown -R tester .
+  su tester -c "make -k check"
+]
+# real    7m7.967s
+# user    11m12.892s
+# sys     12m28.091s
+
+install=[ make install ]
+# real    0m25.227s
+# user    0m23.258s
+# sys     0m38.308s
+
+clean=[ cd ../ && rm -rf util-linux-2.41.3 ]
+
+# 1 tests of 337 FAILED
+#   misc/enosys
+# FAILED (misc/enosys-ioctl)
+# FAILED (2 from 3 sub-tests)

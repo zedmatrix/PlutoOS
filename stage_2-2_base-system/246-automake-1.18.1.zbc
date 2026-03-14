@@ -1,0 +1,41 @@
+pkgdir=[automake-1.18.1]
+pkgname=[automake]
+pkgver=[1.18.1]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz]
+md5sum=[cea31dbf1120f890cbf2a3032cfb9a68]
+
+extract=[ xtar /sources/automake-1.18.1.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/automake-1.18.1 ]
+# real    0m23.480s
+# user    0m13.699s
+# sys     0m10.323s
+
+build=[ make ]
+# real    0m5.907s
+# user    0m7.201s
+# sys     0m7.455s
+
+check=[ make -j4 check ]
+# real    205m5.347s
+# user    474m54.365s
+# sys     281m56.302s
+
+install=[ make install ]
+# real    0m2.230s
+# user    0m1.781s
+# sys     0m2.435s
+
+clean=[ cd ../ && rm -rf automake-1.18.1 ]
+
+# Testsuite summary for GNU Automake 1.18.1
+# ============================================================================
+# # TOTAL: 2960
+# # PASS:  2756
+# # SKIP:  165
+# # XFAIL: 39
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

@@ -7,6 +7,18 @@ zarchive=[false]
 pkgurl=[https://github.com/lfs-book/make-ca/archive/v1.16.1/make-ca-1.16.1.tar.gz]
 md5sum=[bf9cea2d24fc5344d4951b49f275c595]
 
-build=[make install && install -vdm755 /etc/ssl/local]
+extract=[ xtar /sources/make-ca-1.16.1.tar.gz ]
 
-install=[/usr/sbin/make-ca -g]
+build=[ make install
+  install -vdm755 /etc/ssl/local
+]
+# real    0m0.827s
+# user    0m0.553s
+# sys     0m0.446s
+
+install=[ /usr/sbin/make-ca -g ]
+# real    2m23.891s
+# user    1m15.433s
+# sys     1m42.434s
+
+clean=[ cd ../ && rm -rf make-ca-1.16.1 ]

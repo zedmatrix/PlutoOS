@@ -6,8 +6,16 @@ zarchive=[false]
 pkgurl=[https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz]
 md5sum=[780fc1896922b1bc52a4e90980cdda48]
 
-build=[make prefix=/usr]
+extract=[ xtar /sources/zstd-1.5.7.tar.gz ]
 
-install=[make prefix=/usr install]
+build=[ make prefix=/usr ]
+# real    9m44.274s
+# user    35m33.768s
+# sys     1m45.259s
 
-post=[rm -v /usr/lib/libzstd.a]
+install=[ make prefix=/usr install ]
+# real    0m5.763s
+# user    0m3.312s
+# sys     0m2.669s
+
+clean=[ cd ../ && rm -rf zstd-1.5.7 ]

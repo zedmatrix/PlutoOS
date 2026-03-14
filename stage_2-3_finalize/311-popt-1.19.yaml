@@ -1,0 +1,41 @@
+description: "The popt package contains the popt libraries which are used by some programs to parse command-line options."
+
+package:
+  name: popt
+  version: 1.19
+  rel: 1
+  archive: false
+  delete: true
+
+sources:
+  - url: https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/popt-1.19.tar.gz
+    sha256: c25a4838fc8e4c1c8aacb8bd620edb3084a3d63bf8987fdad3ca2758c63240f9
+    md5: eaa2135fddb6eb03f2c87ee1823e5a78
+
+extract: ' xtar /sources/popt-1.19.tar.gz '
+
+prepare: |
+  ./configure --prefix=/usr
+
+# real    0m49.648s
+# user    0m24.189s
+# sys     0m28.001s
+
+build: |
+  make
+
+# real    0m24.216s
+# user    0m46.828s
+# sys     0m11.743s
+
+install: |
+  make install
+
+# real    0m4.385s
+# user    0m1.741s
+# sys     0m3.153s
+
+clean: ' cd ../ && rm -rf popt-1.19 '
+
+optional:
+  - doxygen

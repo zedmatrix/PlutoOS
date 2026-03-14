@@ -1,0 +1,33 @@
+pkgdir=[expat-2.7.3]
+pkgname=[expat]
+pkgver=[2.7.3]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.xz]
+md5sum=[423975a2a775ff32f12c53635b463a91]
+
+extract=[ xtar /sources/expat-2.7.3.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/expat-2.7.3 ]
+# real    1m6.536s
+# user    0m32.319s
+# sys     0m37.846s
+
+build=[ make ]
+# real    0m52.985s
+# user    2m33.171s
+# sys     0m13.577s
+
+check=[ make check ]
+# real    2m10.217s
+# user    4m47.264s
+# sys     0m17.030s
+
+install=[ make install ]
+# real    0m2.961s
+# user    0m1.498s
+# sys     0m2.164s
+
+post=[ install -v -m644 doc/*.{html,css} /usr/share/doc/expat-2.7.3 ]
+
+clean=[ cd ../ && rm -rf expat-2.7.3 ]

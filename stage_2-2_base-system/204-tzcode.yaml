@@ -1,0 +1,37 @@
+package:
+  name: tzcode
+  version: 2026a
+  rel: 0
+  archive: false
+  delete: true
+
+sources:
+  - url: https://data.iana.org/time-zones/releases/tzcode2026a.tar.gz
+    sha256: f80a17a2eddd2b54041f9c98d75b0aa8038b016d7c5de72892a146d9938740e1
+    md5: e546c46355a4e2dd28f935bdfc398b50
+  - url: https://data.iana.org/time-zones/releases/tzdata2026a.tar.gz
+    sha256: 77b541725937bb53bd92bd484c0b43bec8545e2d3431ee01f04ef8f2203ba2b7
+    md5: 09a2e016d36a4c7136475dd75acd4dbc
+
+prepare: |
+  tar xf /sources/tzdata2026a.tar.gz
+
+build: |
+  make CC=gcc zic zdump tzselect
+
+install: |
+  install -m755 zic /usr/bin
+  install -m755 zdump /usr/bin
+  install -m755 tzselect /usr/bin
+
+final: |
+  mkdir -pv /usr/share/zoneinfo/{posix,right} &&
+  for tz in etcetera southamerica northamerica europe africa antarctica  \
+          asia australasia backward; do
+    zic -L /dev/null   -d /usr/share/zoneinfo ${tz} &&
+    zic -L /dev/null   -d /usr/share/zoneinfo/posix ${tz} &&
+    zic -L leapseconds -d /usr/share/zoneinfo/right ${tz}
+  done &&
+  cp -v zone.tab zone1970.tab iso3166.tab /usr/share/zoneinfo &&
+  zic -d /usr/share/zoneinfo -p America/New_York;
+  ln -sfv /usr/share/zoneinfo/Canada/Pacific /etc/localtime

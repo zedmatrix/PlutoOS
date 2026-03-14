@@ -1,0 +1,24 @@
+pkgdir=[pyelftools-0.32]
+pkgname=[pyelftools]
+pkgver=[0.32]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://files.pythonhosted.org/packages/b9/ab/33968940b2deb3d92f5b146bc6d4009a5f95d1d06c148ea2f9ee965071af/pyelftools-0.32.tar.gz]
+alturl=[https://github.com/eliben/pyelftools/archive/v0.32/pyelftools-0.32.tar.gz]
+md5sum=[240cf39dc5dad992f25cb5a4e4244f88]
+sha256sum=[82d0399bce74d162fba75b3568ad47bf48ed2c5e028b72026bdc2f678903de7d]
+
+extract=[ xtar /sources/pyelftools-0.32.tar.gz ]
+
+build=[ pip3 wheel -w dist --no-cache-dir --no-build-isolation --no-deps $PWD ]
+# real    0m12.569s
+# user    0m10.281s
+# sys     0m2.052s
+
+install=[ pip3 install --no-index --find-links dist pyelftools ]
+# real    0m7.764s
+# user    0m6.740s
+# sys     0m0.863s
+
+clean=[ cd ../ && rm -rf pyelftools-0.32 ]

@@ -1,0 +1,45 @@
+pkgdir=[intltool-0.51.0]
+pkgname=[intltool]
+pkgver=[0.51.0]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz]
+md5sum=[12e517cac2b57a0121cda351570f1e63]
+
+extract=[ xtar /sources/intltool-0.51.0.tar.gz ]
+
+prepare=[ sed -i 's:\\\${:\\\$\\{:' intltool-update.in
+  ./configure --prefix=/usr
+]
+# real    0m5.364s
+# user    0m1.997s
+# sys     0m3.998s
+
+build=[ make ]
+# real    0m0.409s
+# user    0m0.209s
+# sys     0m0.394s
+
+check=[ make check ]
+# real    0m21.855s
+# user    0m17.757s
+# sys     0m3.793s
+
+install=[ make install ]
+# real    0m0.729s
+# user    0m0.403s
+# sys     0m0.697s
+
+post=[ install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-0.51.0/I18N-HOWTO ]
+
+clean=[ cd ../ && rm -rf intltool-0.51.0 ]
+
+# Testsuite summary for intltool 0.51.0
+# ============================================================================
+# # TOTAL: 1
+# # PASS:  1
+# # SKIP:  0
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

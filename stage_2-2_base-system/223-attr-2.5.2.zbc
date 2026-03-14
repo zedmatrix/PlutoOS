@@ -1,0 +1,35 @@
+pkgdir=[attr-2.5.2]
+pkgname=[attr]
+pkgver=[2.5.2]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://download.savannah.gnu.org/releases/attr/attr-2.5.2.tar.gz]
+md5sum=[227043ec2f6ca03c0948df5517f9c927]
+
+extract=[ xtar /sources/attr-2.5.2.tar.gz ]
+
+prepare=[ sed -Ee "1s|(.*)|#include <libgen.h>\n\1|;" -i tools/attr.c
+  ./configure --prefix=/usr --disable-static \
+  --sysconfdir=/etc --docdir=/usr/share/doc/attr-2.5.2
+]
+# real    0m37.489s
+# user    0m18.205s
+# sys     0m21.621s
+
+build=[ make ]
+# real    0m12.556s
+# user    0m25.073s
+# sys     0m11.308s
+
+check=[ make -k check ]
+# One test is known to fail because of a minor inconsistency: FAIL: test/attr.test
+# real    0m16.106s
+# user    0m1.398s
+# sys     0m1.888s
+
+install=[ make install ]
+# real    0m3.079s
+# user    0m1.843s
+# sys     0m3.066s
+
+clean=[ cd ../ && rm -rf attr-2.5.2 ]

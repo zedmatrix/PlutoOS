@@ -7,6 +7,36 @@ zarchive=[false]
 pkgurl=[https://ftp.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz]
 md5sum=[a8e113e040d57a523684e141970eea7a]
 
-build=[./configure --prefix=/usr --disable-static && make]
+extract=[ xtar /sources/libidn2-2.3.8.tar.gz ]
 
-install=[make install]
+prepare=[ ./configure --prefix=/usr --disable-static ]
+# real    2m24.975s
+# user    1m18.789s
+# sys     1m9.839s
+
+build=[ make ]
+# real    0m50.966s
+# user    1m29.709s
+# sys     0m42.085s
+
+check=[ make check ]
+# real    0m41.718s
+# user    1m0.509s
+# sys     0m25.489s
+
+install=[ make install ]
+# real    0m8.991s
+# user    0m4.544s
+# sys     0m5.543s
+
+clean=[ cd ../ && rm -rf libidn2-2.3.8 ]
+
+# Testsuite summary for Libidn2 2.3.8
+# ============================================================================
+# # TOTAL: 11
+# # PASS:  11
+# # SKIP:  0
+# # XFAIL: 0
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0

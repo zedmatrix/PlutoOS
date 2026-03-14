@@ -1,0 +1,95 @@
+pkgdir=[gcc-14.3.0]
+pkgname=[gcc]
+pkgver=[14.3.0]
+pkgrel=[1]
+zarchive=[true]
+pkgurl=[https://ftp.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz]
+md5sum=[2e2f25966bbb5321bf6a3beafcd241b5]
+
+extract=[ xtar /sources/gcc-14.3.0.tar.xz ]
+
+preconfig=[ sed -e '/lp64=/s/lib64/lib/' -i.orig gcc/config/aarch64/t-aarch64-linux ]
+
+prepare=[ mcd build
+  ../configure --prefix=/usr LD=ld --enable-languages=c,c++ \
+  --enable-default-pie --enable-default-ssp --enable-host-pie --disable-multilib \
+  --disable-bootstrap --disable-fixincludes --with-system-zlib
+#   --target=aarch64-pc-linux-musl
+#   --host=aarch64-pc-linux-musl
+#   --build=aarch64-pc-linux-musl
+#   Optional to add
+]
+
+build=[ cd build && make ]
+# real    200m35.588s
+# user    628m22.341s
+# sys     57m15.513s
+
+check=[ cd build && ulimit -s -H unlimited
+ sed -e '/cpython/d' -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
+ sed -e 's/no-pic /&-no-pie /' -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c
+ sed -e 's/300000/(1|300000)/' -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c
+ sed -e 's/{ target nonpic } //' -e '/GOTPCREL/d' -i ../gcc/testsuite/gcc.target/i386/fentryname3.c
+ chown -R tester . && su tester -c "PATH=$PATH make -j$(nproc) -k check"
+ ../contrib/test_summary | grep -A7 Summ
+]
+# 3 days (March 8, 2026 - 9:00am)
+
+install=[ cd build && make install ]
+# real    1m15.951s
+# user    1m8.258s
+# sys     1m59.625s
+
+post=[ chown -v -R root:root /usr/lib/gcc/$(gcc -dumpmachine)/14.3.0/include{,-fixed}
+  ln -svr /usr/bin/cpp /usr/lib
+  ln -sv gcc.1 /usr/share/man/man1/cc.1
+  ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/14.3.0/liblto_plugin.so /usr/lib/bfd-plugins/
+]
+
+postconfig=[ mkdir -pv /usr/share/gdb/auto-load/usr/lib
+  mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib
+]
+
+clean=[ cd ../../ && rm -rf gcc-14.3.0 ]
+
+# === libatomic Summary ===
+#
+# # of expected passes            54
+#
+# XPASS: libgomp.c/alloc-pinned-1.c execution test
+# --
+#                 === libgomp Summary ===
+#
+# # of expected passes            5466
+# # of unexpected successes       2
+# # of expected failures          32
+# # of unsupported tests          371
+# --
+#                 === libitm Summary ===
+#
+# # of expected passes            44
+# # of expected failures          3
+# # of unsupported tests          1
+# --
+#                 === libstdc++ Summary ===
+#
+# # of expected passes            17688
+# # of unexpected failures        5
+# # of expected failures          127
+# # of unsupported tests          782
+# --
+#                 === g++ Summary ===
+#
+# # of expected passes            416191
+# # of unexpected failures        249
+# # of expected failures          3050
+# # of unresolved testcases       3
+# # of unsupported tests          12714
+# --
+#                 === gcc Summary ===
+#
+# # of expected passes            338572
+# # of unexpected failures        231
+# # of expected failures          1760
+# # of unresolved testcases       14
+# # of unsupported tests          5270

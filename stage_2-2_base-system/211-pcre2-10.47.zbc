@@ -1,0 +1,42 @@
+pkgdir=[pcre2-10.47]
+pkgname=[pcre2]
+pkgver=[10.47]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2]
+md5sum=[aded5840ab5a7d772dd4e16fc294b665]
+
+extract=[ xtar /sources/pcre2-10.47.tar.bz2 ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/pcre2-10.47 --enable-unicode \
+	--enable-jit --enable-pcre2-16 --enable-pcre2-32 --enable-pcre2grep-libz \
+	--enable-pcre2grep-libbz2 --enable-pcre2test-libedit
+]
+# real    0m51.249s
+# user    0m25.671s
+# sys     0m27.663s
+
+build=[ make ]
+# real    10m45.168s
+# user    33m32.237s
+# sys     2m34.947s
+
+check=[ make check ]
+# TOTAL: 4
+# PASS:  4
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+# real    2m22.604s
+# user    3m17.843s
+# sys     1m7.713s
+
+install=[ make install ]
+# real    0m7.381s
+# user    0m3.784s
+# sys     0m5.744s
+
+clean=[ cd ../ && rm -rf pcre2-10.47 ]

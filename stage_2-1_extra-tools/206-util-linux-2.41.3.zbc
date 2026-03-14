@@ -1,0 +1,32 @@
+pkgdir=[util-linux-2.41.3]
+pkgname=[util-linux]
+pkgver=[2.41.3]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.xz]
+md5sum=[d2faa85303dea29e7f6ee40a9465e528]
+
+extract=[ xtar /sources/util-linux-2.41.3.tar.xz ]
+
+preconfig=[ mkdir -pv /var/lib/hwclock ]
+
+prepare=[ ./configure --libdir=/usr/lib --runstatedir=/run --disable-chfn-chsh --disable-login --disable-nologin \
+  --disable-su --disable-setpriv --disable-runuser --disable-pylibmount --disable-static --disable-liblastlog2 \
+  --without-python ADJTIME_PATH=/var/lib/hwclock/adjtime --docdir=/usr/share/doc/util-linux-2.41.3
+]
+# real    3m34.155s
+# user    1m56.319s
+# sys     1m41.363s
+
+build=[ make ]
+# real    7m22.493s
+# user    22m42.568s
+# sys     5m3.076s
+
+install=[ make install ]
+# real    0m19.809s
+# user    0m20.008s
+# sys     0m31.167s
+
+clean=[ cd ../ && rm -rf util-linux-2.41.3 ]

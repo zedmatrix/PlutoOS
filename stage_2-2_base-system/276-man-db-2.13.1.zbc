@@ -1,0 +1,84 @@
+pkgdir=[man-db-2.13.1]
+pkgname=[man-db]
+pkgver=[2.13.1]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://download.savannah.gnu.org/releases/man-db/man-db-2.13.1.tar.xz]
+md5sum=[b6335533cbeac3b24cd7be31fdee8c83]
+
+extract=[ xtar /sources/man-db-2.13.1.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --docdir=/usr/share/doc/man-db-2.13.1 --sysconfdir=/etc \
+  --disable-setuid --enable-cache-owner=bin --with-browser=/usr/bin/lynx \
+  --with-vgrind=/usr/bin/vgrind --with-grap=/usr/bin/grap
+]
+# real    6m27.000s
+# user    3m35.010s
+# sys     2m51.733s
+
+build=[ make ]
+# real    3m4.293s
+# user    7m7.243s
+# sys     2m52.020s
+
+check=[ make check ]
+# real    0m42.198s
+# user    0m56.445s
+# sys     1m16.839s
+
+install=[ make install ]
+# real    0m18.327s
+# user    0m9.748s
+# sys     0m13.755s
+
+clean=[ cd ../ && rm -rf man-db-2.13.1 ]
+
+# Testsuite summary for man-db 2.13.1 (before musl-utils-1.1.12-r7)
+# ============================================================================
+# # TOTAL: 32
+# # PASS:  11
+# # SKIP:  0
+# # XFAIL: 0
+# # FAIL:  21
+# # XPASS: 0
+# # ERROR: 0
+
+# FAIL: lexgrog-backslash-dash-rhs
+# FAIL: lexgrog-basic
+# FAIL: lexgrog-multiple-whatis
+# FAIL: man-deleted-directory
+# FAIL: man-executable-page-on-path
+# FAIL: man-language-specific-requests
+# FAIL: man-recode-in-place
+# FAIL: man-recode-suffix
+# FAIL: man-so-links-same-section
+# FAIL: manconv-coding-tags
+# FAIL: manconv-guess-from-encoding
+# FAIL: manconv-incomplete-char-at-eof
+# FAIL: manconv-odd-combinations
+# FAIL: mandb-basic
+# FAIL: mandb-purge-updates-timestamp
+# FAIL: mandb-regular-file-symlink-changes
+# FAIL: mandb-symlink-beats-whatis-ref
+# FAIL: mandb-symlink-target-timestamp
+# FAIL: mandb-whatis-broken-link-changes
+# FAIL: whatis-path-to-executable
+# FAIL: zsoelim-so-includes
+
+# After Musl-Utils-1.1.12-r7
+# ============================================================================
+# TOTAL: 32
+# PASS:  26
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  6
+# XPASS: 0
+# ERROR: 0
+
+# FAIL: man-recode-in-place
+# FAIL: man-recode-suffix
+# FAIL: manconv-coding-tags
+# FAIL: manconv-guess-from-encoding
+# FAIL: manconv-incomplete-char-at-eof
+# FAIL: manconv-odd-combinations

@@ -1,0 +1,32 @@
+pkgdir=[psmisc-23.7]
+pkgname=[psmisc]
+pkgver=[23.7]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-23.7.tar.xz]
+md5sum=[53eae841735189a896d614cba440eb10]
+
+extract=[ xtar /sources/psmisc-23.7.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr ]
+# real    1m5.064s
+# user    0m34.729s
+# sys     0m31.149s
+
+build=[ make ]
+# real    0m12.031s
+# user    0m28.226s
+# sys     0m4.084s
+
+check=[ make check ]
+# real    0m9.741s
+# user    0m1.931s
+# sys     0m2.448s
+## Many Testsuite failures are known since procps-ng is not installed yet
+
+install=[ make install ]
+# real    0m5.622s
+# user    0m2.393s
+# sys     0m4.817s
+
+clean=[ cd ../ && rm -rf psmisc-23.7 ]

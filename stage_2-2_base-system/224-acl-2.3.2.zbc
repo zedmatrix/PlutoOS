@@ -1,0 +1,58 @@
+pkgdir=[acl-2.3.2]
+pkgname=[acl]
+pkgver=[2.3.2]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://download.savannah.gnu.org/releases/acl/acl-2.3.2.tar.xz]
+md5sum=[590765dee95907dbc3c856f7255bd669]
+
+extract=[ xtar /sources/acl-2.3.2.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/acl-2.3.2 ]
+# real    0m38.569s
+# user    0m18.564s
+# sys     0m22.451s
+
+build=[ make ]
+# real    0m32.151s
+# user    1m8.947s
+# sys     0m35.433s
+
+check=[ make check ]
+# real    0m20.233s
+# user    0m11.297s
+# sys     0m7.226s
+
+install=[ make install ]
+# real    0m4.005s
+# user    0m2.158s
+# sys     0m3.278s
+
+clean=[ cd ../ && rm -rf acl-2.3.2 ]
+
+# ============================================================================
+# Testsuite summary for acl 2.3.2
+# ============================================================================
+# # TOTAL: 15
+# # PASS:  7
+# # SKIP:  4
+# # XFAIL: 2
+# # FAIL:  2
+# # XPASS: 0
+# # ERROR: 0
+# ============================================================================
+# PASS: test/getfacl-lfs.test
+# FAIL: test/cp.test
+# PASS: test/getfacl-recursive.test
+# PASS: test/malformed-restore.test
+# PASS: test/getfacl-noacl.test
+# PASS: test/sbits-restore.test
+# PASS: test/utf8-filenames.test
+# SKIP: test/root/getfacl.test
+# SKIP: test/root/permissions.test
+# SKIP: test/root/restore.test
+# PASS: test/setfacl-X.test
+# SKIP: test/root/setfacl.test
+# XFAIL: test/nfs/nfsacl.test
+# XFAIL: test/nfs/nfs-dir.test
+# FAIL: test/misc.test

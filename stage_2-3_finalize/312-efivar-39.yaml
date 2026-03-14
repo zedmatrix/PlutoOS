@@ -1,0 +1,28 @@
+description: "efivar package provides tools and libraries to manipulate EFI variables."
+
+package:
+  name: efivar
+  version: 39
+  rel: 1
+  archive: false
+  delete: true
+
+sources:
+  - url: https://github.com/rhboot/efivar/archive/39/efivar-39.tar.gz
+    sha256: c9edd15f2eeeea63232f3e669a48e992c7be9aff57ee22672ac31f5eca1609a6
+    md5: a8fc3e79336cd6e738ab44f9bc96a5aa
+
+extract: ' xtar /sources/efivar-39.tar.gz '
+
+build: |
+  make ENABLE_DOCS=0
+
+install: |
+  make install ENABLE_DOCS=0 LIBDIR=/usr/lib
+  install -vm644 docs/efivar.1 /usr/share/man/man1
+  install -vm644 docs/*.3 /usr/share/man/man3
+
+clean: ' cd ../ && rm -rf efivar-39 '
+
+optional:
+  - mandoc

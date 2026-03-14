@@ -6,6 +6,16 @@ zarchive=[false]
 pkgurl=[https://astron.com/pub/file/file-5.46.tar.gz]
 md5sum=[459da2d4b534801e2e2861611d823864]
 
-build=[./configure --prefix=/usr && make]
+extract=[ xtar /sources/file-5.46.tar.gz ]
 
-install=[make install]
+build=[ ./configure --prefix=/usr; make; ]
+# real    2m4.900s
+# user    2m30.218s
+# sys     0m59.350s
+
+install=[ make install ]
+# real    0m3.147s
+# user    0m1.615s
+# sys     0m2.455s
+
+clean=[ cd ../ && rm -rf file-5.46 ]

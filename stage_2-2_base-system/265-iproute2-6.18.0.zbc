@@ -1,0 +1,32 @@
+pkgdir=[iproute2-6.18.0]
+pkgname=[iproute2]
+pkgver=[6.18.0]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.18.0.tar.xz]
+md5sum=[9e3f70620db43fe0ecab29b36a47914d]
+
+extract=[ xtar /sources/iproute2-6.18.0.tar.xz ]
+
+# bugfix for gcc-14.3.0
+sed '8i\#include <limits.h> \' -i lib/utils_math.c
+sed '18i\#include <limits.h> \' -i tc/tc_core.c
+
+prepare=[ sed -i /ARPD/d Makefile
+  rm -fv man/man8/arpd.8
+]
+
+build=[ make NETNS_RUN_DIR=/run/netns ]
+# real    2m55.457s
+# user    8m26.467s
+# sys     1m2.627s
+
+install=[ make SBINDIR=/usr/sbin install ]
+# real    0m1.615s
+# user    0m0.692s
+# sys     0m0.870s
+
+post=[ install -vDm644 COPYING README* -t /usr/share/doc/iproute2-6.18.0 ]
+
+clean=[ cd ../ && rm -rf iproute2-6.18.0 ]

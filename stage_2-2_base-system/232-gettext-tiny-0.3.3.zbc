@@ -1,0 +1,22 @@
+pkgdir=[gettext-tiny-0.3.3]
+pkgname=[gettext-tiny]
+pkgver=[0.3.3]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[http://ftp.barfooze.de/pub/sabotage/tarballs/gettext-tiny-0.3.3.tar.xz]
+md5sum=[70526de3ff7a5ab02e4637b74929aa7e]
+
+extract=[ xtar /sources/gettext-tiny-0.3.3.tar.xz ]
+
+build=[ make LIBINTL=MUSL prefix=/usr ]
+# real    0m1.845s
+# user    0m3.407s
+# sys     0m1.463s
+
+install=[ make LIBINTL=MUSL prefix=/usr install]
+# real    0m3.053s
+# user    0m3.243s
+# sys     0m5.978s
+
+clean=[ cd ../ && rm -rf gettext-tiny-0.3.3 ]

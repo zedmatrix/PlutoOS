@@ -1,0 +1,25 @@
+pkgdir=[meson-1.10.1]
+pkgname=[meson]
+pkgver=[1.10.1]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://github.com/mesonbuild/meson/releases/download/1.10.1/meson-1.10.1.tar.gz]
+md5sum=[e1c12d275f8aae9fae71dff3d6891746]
+
+extract=[ xtar /sources/meson-1.10.1.tar.gz ]
+
+build=[ pip3 wheel -w dist --no-cache-dir --no-build-isolation --no-deps $PWD ]
+# real    0m16.656s
+# user    0m13.750s
+# sys     0m2.761s
+
+install=[ pip3 install --no-index --find-links dist meson ]
+# real    0m26.050s
+# user    0m24.214s
+# sys     0m1.329s
+
+post=[ install -vDm644 data/shell-completions/bash/meson /usr/share/bash-completion/completions/meson
+ install -vDm644 data/shell-completions/zsh/_meson /usr/share/zsh/site-functions/_meson
+]
+
+clean=[ cd ../ && rm -rf meson-1.10.1 ]

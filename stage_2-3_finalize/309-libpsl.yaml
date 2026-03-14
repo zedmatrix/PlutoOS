@@ -1,0 +1,69 @@
+description: "The libpsl package provides a library for accessing and resolving information from the Public Suffix List (PSL)."
+
+package:
+  name: libpsl
+  version: 0.21.5
+  rel: 1
+  archive: false
+  delete: true
+
+sources:
+  - url: https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
+    sha256: 1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208
+    md5: 870a798ee9860b6e77896548428dba7b
+
+extract: ' xtar /sources/libpsl-0.21.5.tar.gz '
+prepare: |
+  meson setup build --prefix=/usr --buildtype=release -Ddefault_library=both
+
+# real    0m14.808s
+# user    0m10.495s
+# sys     0m4.017s
+
+build: |
+  ninja -C build
+
+# real    0m29.548s
+# user    0m29.529s
+# sys     0m3.028s
+
+check: |
+  ninja -C build test
+
+# real    0m32.852s
+# user    0m56.037s
+# sys     0m8.114s
+
+install: |
+  ninja -C build install
+
+# real    0m4.320s
+# user    0m3.532s
+# sys     0m0.701s
+
+clean: ' cd ../ && rm -rf libpsl-0.21.5 '
+
+required:
+  - libidn2
+  - libunistring
+
+optional:
+  - icu
+  - libidn
+  - valgrind
+  - gtk-doc
+
+
+#=========================================================================
+# 1/8 libpsl:test-is-public                          OK              0.23s
+# 2/8 libpsl:test-is-public-builtin                  OK              0.11s
+# 3/8 libpsl:test-is-cookie-domain-acceptable        OK              0.27s
+# 4/8 libpsl:test-registrable-domain                 OK              0.18s
+# 5/8 libpsl:libpsl_idn2_fuzzer                      OK              0.22s
+# 6/8 libpsl:libpsl_idn2_load_dafsa_fuzzer           OK              0.10s
+# 7/8 libpsl:test-is-public-all                      OK              0.76s
+# 8/8 libpsl:libpsl_idn2_load_fuzzer                 OK              1.50s
+#
+# Ok:                8
+# Fail:              0
+

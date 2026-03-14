@@ -1,0 +1,61 @@
+package:
+  name: systemd
+  version: 259
+  rel: 1
+  archive: false
+  delete: true
+
+sources:
+  - url: https://github.com/systemd/systemd/archive/v259/systemd-259.tar.gz
+    md5: 5c5e5c1c43d4ee5e5648e7ab118ac476
+  - url: https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-259.tar.xz
+    md5: 12897db690de993938888f7c8b4b637e
+
+extract: 'xtar /sources/systemd-259.tar.gz'
+
+prepare: |
+  sed -e 's/GROUP="render"/GROUP="video"/' -e 's/GROUP="sgx", //' -i rules.d/50-udev-default.rules.in
+  echo 'NAME="Linux From Scratch"' > /etc/os-release
+  meson setup build --prefix=/usr --buildtype=release -Dlibc=musl -Ddefault-dnssec=no -Dfirstboot=false \
+    -Dinstall-tests=false -Dldconfig=false -Dsysusers=false -Drpmmacrosdir=no -Dhomed=disabled \
+    -Duserdb=false -Dman=disabled -Dmode=release -Dpamconfdir=no -Ddev-kvm-mode=0660 \
+    -Dnobody-group=nogroup -Dsysupdate=disabled -Dukify=disabled -Ddocdir=/usr/share/doc/systemd-259 \
+    -Defi=true -Dbootloader=enabled -Dsbat-distro="lfs" -Dsbat-distro-url="https://www.linuxfromscratch.org/"
+
+# real    2m57.655s
+# user    2m25.245s
+# sys     0m29.608s
+
+build: |
+  ninja -C build
+
+# real    35m8.609s
+# user    121m9.671s
+# sys     13m23.698s
+
+install: |
+  ninja -C build install
+
+# real    0m20.121s
+# user    0m15.513s
+# sys     0m4.054s
+
+final: |
+  tar -xf /sources/systemd-man-pages-259.tar.xz --no-same-owner \
+    --strip-components=1 -C /usr/share/man
+  systemd-machine-id-setup
+  systemctl preset-all
+
+clean: 'cd ../ && rm -rf systemd-259'
+required:
+  - Jinja2
+  - pyelftools
+
+
+# [1744/2361] Generating src/boot/addonaa64.efi.stub with a custom command
+# WARNING: Non-empty .got section
+# [1745/2361] Generating src/boot/systemd-bootaa64.efi with a custom command
+# WARNING: Non-empty .got section
+# [1746/2361] Generating src/boot/linuxaa64.efi.stub with a custom command
+# WARNING: Non-empty .got section
+# [2361/2361] Generating export-dbus-interfaces with a custom command

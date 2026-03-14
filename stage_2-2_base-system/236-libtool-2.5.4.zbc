@@ -1,0 +1,30 @@
+pkgdir=[libtool-2.5.4]
+pkgname=[libtool]
+pkgver=[2.5.4]
+pkgrel=[1]
+zarchive=[false]
+pkgurl=[https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz]
+md5sum=[22e0a29df8af5fdde276ea3a7d351d30]
+
+extract=[ xtar /sources/libtool-2.5.4.tar.xz ]
+
+prepare=[ ./configure --prefix=/usr ]
+# real    1m10.027s
+# user    0m31.545s
+# sys     0m43.168s
+
+build=[ make ]
+# real    0m24.865s
+# user    0m32.594s
+# sys     0m12.210s
+
+check=[ make check ]
+
+install=[ make install ]
+# real    0m6.927s
+# user    0m3.483s
+# sys     0m6.458s
+
+post=[ rm -fv /usr/lib/libltdl.a ]
+
+clean=[ cd ../ && rm -rf libtool-2.5.4 ]

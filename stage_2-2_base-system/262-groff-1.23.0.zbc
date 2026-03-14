@@ -1,0 +1,42 @@
+pkgdir=[groff-1.23.0]
+pkgname=[groff]
+pkgver=[1.23.0]
+pkgrel=[1]
+zarchive=[false]
+
+pkgurl=[https://ftp.gnu.org/gnu/groff/groff-1.23.0.tar.gz]
+md5sum=[5e4f40315a22bb8a158748e7d5094c7d]
+
+extract=[ xtar /sources/groff-1.23.0.tar.gz ]
+
+prepare=[ PAGE=A4 ./configure --prefix=/usr ]
+# real    2m22.906s
+# user    1m27.498s
+# sys     0m55.076s
+
+build=[ make ]
+# real    4m40.882s
+# user    14m14.921s
+# sys     1m45.290s
+
+check=[ make check ]
+# real    0m53.348s
+# user    1m36.683s
+# sys     1m6.183s
+
+install=[ make install ]
+# real    0m7.490s
+# user    0m8.206s
+# sys     0m10.821s
+
+clean=[ cd ../ && rm -rf groff-1.23.0 ]
+
+# Testsuite summary for GNU roff 1.23.0
+# ============================================================================
+# # TOTAL: 164
+# # PASS:  151
+# # SKIP:  11
+# # XFAIL: 2
+# # FAIL:  0
+# # XPASS: 0
+# # ERROR: 0
